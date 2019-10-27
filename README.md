@@ -13,11 +13,11 @@
 |phone_number|integer|null: false, unique: true|
 |birth_year_on|date|null: false|
 |birth_month_on|date|null: false|
-|birth_day|date|null: false|
-|profile|text|null: false|
+|birth_day_on|date|null: false|
+|profile|text|
 |late_id|integer|null: false|
 |point|integer|null: false|
-|avatar|string|null: false|
+|avatar|string|
 
 
 ### Association
@@ -36,7 +36,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|integer|
+|item_id|integer|null: false|
 
 ### Association
 - belongs_to:item
@@ -45,9 +45,9 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
+|user_id|integer|null: false|
 |postal_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture|integer|null: false|
 |city|string|null: false|
 |town|string|null: false|
 |building|string|
@@ -58,9 +58,9 @@
 ## latesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
+|user_id|integer|null: false|
 |text|text|
-|late|integer|
+|late|integer|null: false|
 
 ### Association
 - belongs_to:user
@@ -68,9 +68,9 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|item_id|integer|
-|text|text|
+|user_id|integer|null: false|
+|item_id|integer|null: false|
+|text|text|null: false|
 
 ### Association
 - belongs_to:item
@@ -100,7 +100,7 @@
 |------|----|-------|
 |user_id|integer|
 |item_id|integer|
-|like|string|
+|like|integer|
 
 ### Association
 - belongs_to:item
@@ -109,7 +109,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|messages|text|
+|message|text|
 |user_id|integer|
 |item_id|integer|
 
@@ -142,8 +142,8 @@
 - has_many:images
 - has_many:likes
 - has_many:messages
-- has_many:item-category      
-- has_many:categories, through:　:item-category     
+- has_many:items-categories      
+- has_many:categories, through:　:items-categories    
 
 
 ## brandsテーブル
@@ -154,8 +154,8 @@
 
 ### Association
 - has_many:items
-- has_many:categories,through:　:brand-category
-- has_many:brand-categories
+- has_many:categories,through:　:brands-categories
+- has_many:brands-categories
 
 
 
@@ -190,10 +190,10 @@
 
 
 ### Association
-- has_many:brand-categories
-- has_many:item-categories
-- has_many:items, through: :item-category
-- has_many:brands, through: :brand-category
+- has_many:brands-categories
+- has_many:items-categories
+- has_many:items, through: :items-categories
+- has_many:brands, through: :brands-categories
 
 
 
