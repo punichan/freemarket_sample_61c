@@ -146,9 +146,7 @@
 - has_many:categories, through:　:item-category     
 
 
-
-
-##　brandsテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
