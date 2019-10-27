@@ -185,7 +185,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
+|name|string|null: false|
 |parent_id|integer|
 
 
