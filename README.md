@@ -1,3 +1,5 @@
+test
+
 # README
 # Qiita DB設計
 ## usersテーブル
