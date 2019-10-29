@@ -34,7 +34,7 @@ namespace :deploy do
     invoke 'unicorn:stop'
     invoke 'unicorn:start'
   end
-  
+
   desc 'upload secrets.yml'
   task :upload do
     on roles(:app) do |host|
@@ -48,7 +48,6 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-end
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
