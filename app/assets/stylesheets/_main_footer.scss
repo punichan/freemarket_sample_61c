@@ -3,7 +3,6 @@
   .footer-top{
     background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg);
     background-size: cover;
-
     .footer-container{
       display: flex;
       -webkit-box-pack: justify;
@@ -73,7 +72,6 @@
     }
   }
     .info{
-      // height: calc(100vh - 290px);
       width: 100%;
       background-color: #222222;
       .info-container{
@@ -124,15 +122,12 @@
                 font-size: 50px;
                 float: left;
                 margin-left: 255px;
-                
               }
               text-align: center;
               .span{
                 font-size: 12px;
                 font-weight: bold;
-                margin-left: 150px;
-                
-              }
-            
+                margin-left: 150px;                
+              }            
           }
         }
