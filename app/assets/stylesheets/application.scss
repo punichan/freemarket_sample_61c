@@ -1,9 +1,22 @@
+body{
+  background-color: rgb(245, 245, 245);
+  position: relative;
+  min-height: 100%;
+  color: rgb(51, 51, 51);
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+}
+
 @import "reset";
 @import "index";
 @import "main_footer";
 @import "main_header";
 @import "sign_up";
 @import "sign_in";
+@import "font-awesome";
+@import "main_category";
+@import "main_category_top";
+
 
 *{
   box-sizing: border-box;

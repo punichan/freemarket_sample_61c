@@ -1,0 +1,84 @@
+.main-contents{ 
+  max-width: 1068px;
+  margin: auto;
+  .news{
+    &__link{
+    }
+    &__img {
+      height: 390px;
+      max-width: 680px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+
+  .categorys{
+    text-align: center;
+    padding: 56px 0px 30px;
+    background-color: rgb(255, 255, 255);
+    left: 50%;
+    margin-left: -50vw;
+    position: relative;
+    top: 0px;
+    width: 100vw;
+    .title{
+      margin-bottom: 16px;
+      font-size: 28px;
+      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      font-weight: 600;
+      line-height: 1.4em;
+      color: rgb(51, 51, 51);
+    }
+  
+    .lists{
+      list-style: none;
+      &__list{
+        display: inline-block;
+        background-color: rgb(239, 239, 239);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 15px;
+        padding: 8px 16px;
+        margin: 10px 0 0 10px;
+        color: rgb(51, 51, 51);
+      }
+    }
+  }
+
+  .categorys-box{
+    padding: 42px 0px 100px;
+    // 以下のcssは、_main_categoryと_main_category_topに収納しています。
+  }
+}
+
+.exhibit-btn{
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  text-align: center;
+  .btn-box{
+    padding-top: 32px;
+    text-align: center;
+    display: block;
+    &__text{
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+      display: inline-block;
+      text-decoration: none;
+    }
+    &__font{
+      margin: 3px 26% 0px;;
+      color: rgb(255, 255, 255);
+      display: block;
+    }
+  }
+}
