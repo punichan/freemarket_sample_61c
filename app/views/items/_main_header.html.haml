@@ -1,0 +1,30 @@
+#header
+  .header
+    .header__main
+      .header__main__logo
+        %a.mercarilogo{href: "リンク切れ"}
+          %img{alt: "mercari", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
+      .header__main__search
+        = form_with method: :get, local: true do |f|
+          = f.text_field :search, placeholder: '何かお探しですか？', class:'search-box'
+          %button{type: "submit"}
+            =fa_icon "search", class:'fa-search'
+    .header__contents
+      .header__contents__left
+        .header__contents__left__caegory
+          .header__contents__left__caegory__box
+            .header__contents__left__caegory__box__icon
+              =fa_icon "list-ul", class:'caegory__icon'
+              カテゴリーから探す
+        .header__contents__left__brand
+          .header__contents__left__brand__box
+            .header__contents__left__brand__box__icon
+              =fa_icon "tag", class:'brand__icon'
+              ブランドから探す
+      .header__contents__right
+        .header__contents__right__signup
+          .header__contents__right__signup__box
+            =link_to "新規会員登録", "#", class:"signup-btn"
+        .header__contents__right__login
+          .header__contents__right__login__box
+            =link_to "ログイン", "#", class:"login-btn"
