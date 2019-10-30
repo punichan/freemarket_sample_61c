@@ -77,14 +77,14 @@
     background-color: #222222;
     .info-container{
       width:1300px;
-      height: 400px;    
+      height: 300px;    
       margin: 0 auto; 
       display: flex;
       padding-left: 100px;
       .info-list{
         width: 250px;
         color: #FFFFFFFF;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial,YuGothic,Meiryo,sans-serif;
         .info-title{
           font-size: 16px;
           margin-top: 18px;
@@ -113,21 +113,22 @@
       background-color: #222222;
       color: #FFFFFFFF;        
       &__center{
-        height: 100px;
+        height: 50px;
         width: 1020px;
-        margin-bottom: 45px;
+        position: relative;
           &__img{
             height: 35px;
             width: 120px;
             font-size: 50px;
             float: left;
-            margin-left: 255px;
+            margin-left: 170px;
           }
           text-align: center;
           .span{
             font-size: 12px;
             font-weight: bold;
-            margin-left: 150px;                
+            margin: 15px;
+            position: absolute;                
           }            
       }
     }

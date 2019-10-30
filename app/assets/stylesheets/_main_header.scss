@@ -5,7 +5,7 @@
   z-index: 3;
   .header {
     padding-top: 8px;
-    margin: 0 173px;
+    margin: 0 210px;
     &__main {
       display: flex;
       -webkit-box-pack: justify;
@@ -55,6 +55,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 8px;
+      line-height: 1.5;
       &__left {
         display: flex;
         margin-left: -3px;
