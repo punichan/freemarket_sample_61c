@@ -1,7 +1,7 @@
 .main-contents
   .news
-    %a{class: "advert__link", href: "https://www.mercari.com/jp/featured/camp/"}
-    %img{class: "advert__img", alt: "", src:"https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195"}/
+    = link_to "", class: "news__link" do 
+      %img{class: "news__img", alt: "", src:"https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195"}/
 
   .categorys
     %h2.title 人気カテゴリー
@@ -15,28 +15,32 @@
     .category-topbox
       .box-header
         %h2.box-header__name レディース新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
       
     .category-box
       .box-header
         %h2.box-header__name メンズ新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
     .category-box
       .box-header
         %h2.box-header__name メンズ新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
     .category-box
       .box-header
         %h2.box-header__name メンズ新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
-  .category
+  .categorys
     %h2.title 人気ブランド
     %ul.lists
       %li.lists__list シャネル
@@ -48,29 +52,33 @@
     .category-topbox
       .box-header
         %h2.box-header__name シャネル新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
       
     .category-box
       .box-header
         %h2.box-header__name ルイヴィトン新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
     .category-box
       .box-header
         %h2.box-header__name シュプリーム新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
     .category-box
       .box-header
         %h2.box-header__name ナイキ新着アイテム
-        %a{class: "box-header__more", href: "リンク先のＵＲＬ"} もっと見る ＞
+        = link_to "", class: "box-header__more" do 
+          もっと見る ＞
       =render "main_category"
 
 .exhibit-btn
-  %a{class: "exhibit-btn", href: "リンク先のＵＲＬ"}
+  = link_to "", class: "exhibit-btn" do
     .btn-box
       .btn-box__text 出品
       %i.btn-box__font.fa.fa-camera.fa-3x
