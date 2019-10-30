@@ -71,63 +71,63 @@
       }
     }
   }
-    .info{
-      width: 100%;
-      background-color: #222222;
-      .info-container{
-        width:1300px;
-        height: 400px;    
-        margin: 0 auto; 
-        display: flex;
-        padding-left: 100px;
-        .info-list{
-          width: 250px;
-          color: #FFFFFFFF;
-          font-family: Arial, Helvetica, sans-serif;
-          .info-title{
-            font-size: 16px;
-            margin-top: 18px;
-            font-weight:600;
+}
+  .info{
+    width: 100%;
+    background-color: #222222;
+    .info-container{
+      width:1300px;
+      height: 400px;    
+      margin: 0 auto; 
+      display: flex;
+      padding-left: 100px;
+      .info-list{
+        width: 250px;
+        color: #FFFFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+        .info-title{
+          font-size: 16px;
+          margin-top: 18px;
+          font-weight:600;
+        }
+        .space{
+          margin-top: 59px;
+        }
+        .info-lists{
+          padding: 0 40px 0 0;
+          font-size: 12px;          
+        }          
+          .list{
+            margin-top: 16px;  
+            color: silver;      
           }
-          .space{
-            margin-top: 59px;
+          .fa{
+            font-size: 40px;
+            margin: 25px 0 0 5px;
           }
-          .info-lists{
-            padding: 0 40px 0 0;
-            font-size: 12px;          
-          }          
-            .list{
-              margin-top: 16px;  
-              color: silver;      
-          }
-            .fa{
-              font-size: 40px;
-              margin: 25px 0 0 5px;
-            }
-        }     
-      }
+      }     
     }
   }
-        .info-bottom{
-          width: 100%;
-          background-color: #222222;
-          color: #FFFFFFFF;        
-          &__center{
-            height: 100px;
-            width: 1020px;
-            margin-bottom: 45px;
-              &__img{
-                height: 35px;
-                width: 120px;
-                font-size: 50px;
-                float: left;
-                margin-left: 255px;
-              }
-              text-align: center;
-              .span{
-                font-size: 12px;
-                font-weight: bold;
-                margin-left: 150px;                
-              }            
+    .info-bottom{
+      width: 100%;
+      background-color: #222222;
+      color: #FFFFFFFF;        
+      &__center{
+        height: 100px;
+        width: 1020px;
+        margin-bottom: 45px;
+          &__img{
+            height: 35px;
+            width: 120px;
+            font-size: 50px;
+            float: left;
+            margin-left: 255px;
           }
-        }
+          text-align: center;
+          .span{
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 150px;                
+          }            
+      }
+    }
