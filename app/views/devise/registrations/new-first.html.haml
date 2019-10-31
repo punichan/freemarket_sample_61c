@@ -66,13 +66,13 @@
             = form.label :birth_year_on, "生年月日", class: "label"
             %span.essential 必須
             .form-flex
-              = form.email_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
+              = form.text_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
               = fa_icon "chevron-down", class: "icon-chevron-down"
               %span.date-span 年
-              = form.email_field :birth_month_on, autofocus: true, autocomplete: "birth_month_on", class: "select-default"
+              = form.text_field :birth_month_on, autofocus: true, autocomplete: "birth_month_on", class: "select-default"
               = fa_icon "chevron-down", class: "icon-chevron-down"
               %span.date-span 月
-              = form.email_field :birth_day_on, autofocus: true, autocomplete: "birth_day_on", class: "select-default"
+              = form.text_field :birth_day_on, autofocus: true, autocomplete: "birth_day_on", class: "select-default"
               = fa_icon "chevron-down", class: "icon-chevron-down"
               %span.date-span 日
           .form-text-info
