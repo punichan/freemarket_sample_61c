@@ -221,6 +221,12 @@
             color: #464444;
           }
         }
+        .end-text{
+          text-align: center;
+          padding: 40px;
+          letter-spacing: 1px; 
+          color: #464444;
+        }
         .card-images{
           position: absolute;
           top: 350px;
@@ -268,6 +274,13 @@
         }
         .pay-btn{
           margin-top: 0;
+        }
+        .mercari-img{
+          display: block;
+          margin: 0 auto;
+          width:350px;
+          height: 325px;
+          margin-top: 40px;
         }
         .explanation-info{
           display: block;

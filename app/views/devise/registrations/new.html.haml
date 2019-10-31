@@ -15,50 +15,23 @@
         お届け先住所入力
         .progress-status.through
         .progress-status__bar.through
-      %li.progress-bar__text.active
+      %li.progress-bar__text
         支払い方法
         .progress-status.through
-        .progress-status__bar
-      %li.progress-bar__text
+        .progress-status__bar.through
+      %li.progress-bar__text.active
         完了
-        .progress-status
+        .progress-status.through
 .main
   .container
     .registration-head
-      %h2.registration-head__title 支払い方法
+      %h2.registration-head__title 会員登録完了
     .registration-form
       .form-wrapper
-        = form_with model: @user, url: "/user", id:"new_user", class:"new_user", local: true do |form|
-          .form-group
-            = form.label :cardinfo, "カード番号", class: "label"
-            %span.essential 必須
-            = form.text_field :cardinfo, autofocus: true, autocomplete: "cardinfo", placeholder: "半角数字のみ", class: "form-default"
-          .card-images
-            = image_tag "visa300px.gif", size: "42x25"
-            = image_tag "master300px.gif", size: "42x25"
-            = image_tag "saison300px.gif", size: "42x25"
-            = image_tag "jcb300px.gif", size: "42x25"
-            = image_tag "amex300px.gif", size: "42x25"
-            = image_tag "diners300px.gif", size: "42x25"
-            = image_tag "discover-logo.jpg", size: "42x25"
-          .form-group
-            .exp-date
-              = form.label "有効期限", class: "label"
-              %span.essential 必須
-              = form.text_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
-              %span.exp-month-span 月
-              = fa_icon "chevron-down", class: "icon-chevron-down"
-              = form.text_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
-              %span.exp-year-span 年
-              = fa_icon "chevron-down", class: "icon-chevron-down"
-          .form-group.cvv
-            = form.label :cvv, "セキュリティコード", class: "label"
-            %span.essential 必須
-            = form.text_field :cvv, autofocus: true, autocomplete: "cvv", placeholder: "カード背面4桁もしくは3桁の番号", class: "form-default"
-          = link_to "#", class:"explanation-info" do
-            カード裏面の番号とは？
-            = fa_icon "question-circle", class: "icon-question-circle"
-          %button.registration-form__content__btn.pay-btn
-            = link_to "次へ進む", "#"
-          
-= render "footer"
+        .end-text
+          %p ありがとうございます。
+          %p 会員登録が完了しました。
+        %button.registration-form__content__btn
+          = link_to "メルカリをはじめる", "#"
+        = image_tag "mercari.png", size: "400x400", class: "mercari-img"
+= render 'footer'
