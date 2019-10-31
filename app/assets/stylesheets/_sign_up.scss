@@ -147,6 +147,7 @@
       .form-wrapper{
         width: 50%;
         margin: 0 auto;
+        
         .form-group{
           height: 90px;
           padding-top: 40px;
@@ -157,6 +158,14 @@
           }
           .essential{
             background-color: #EA352E;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 5px;
+            margin-right: 8px;
+            border-radius: 2px;
+          }
+          .essential__grey{
+            background-color: #CCCCCC;
             color: #fff;
             font-size: 12px;
             padding: 4px 5px;
@@ -225,12 +234,16 @@
           text-align: center;
           background-color: #EA352E;
           border: none;
+          margin-top: 60px;
           margin-bottom: 15px;
           a{
             display: block;
             text-decoration: none; 
             color: #fff;
           }
+        }
+        .second{
+          height: 150px; 
         }
         .explanation-info{
           display: block;
