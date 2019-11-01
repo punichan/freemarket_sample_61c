@@ -1,6 +1,7 @@
-.container
-  .renderheader
-  renderheader
+.login-container
+  .user-header
+    = link_to "#" do
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "user-header__img"
   .login-main
     .login-panel
       .login-panel__no-account
@@ -25,4 +26,4 @@
             私はロボットではありません（recaptcha_tags使用予定）
           = f.submit "ログイン", class:"login-form--login-btn"
           =link_to "パスワードをお忘れの方"
-renderfooter
+    = render "devise/registrations/footer"
