@@ -1,0 +1,44 @@
+.side{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  .side-nav{
+    &__list{
+      &__box{
+        border-top: 1px solid #eee;
+        display: block;
+        min-height: 48px;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        position: relative;
+        .nav-link{
+          text-decoration: none;
+          color: #333;
+        }
+        .icon-arrowa{
+          color: #333;
+          position: absolute;
+          right: 16px;
+          font-size: inherit;
+        }
+        .icon-arrowb{
+          color: #ccc;
+          position: absolute;
+          right: 16px;
+          font-size: inherit;
+        }
+      }
+      .side-mypage{
+        background: #eee;
+        font-weight: 600;
+      }
+    }
+    &__head{
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}

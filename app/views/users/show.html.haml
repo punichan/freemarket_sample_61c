@@ -1,1 +1,96 @@
-aaaaaaaaaa
+= render "user_header"
+.nav
+  %ul.nav-content
+    %li.bread1
+      メルカリ
+      %i.fa.fa-angle-right.fa-lg.icon-arrow
+    %li.bread2
+      マイページ
+.mypage-container.clearfix
+  = render "side_bar"
+  .mypage-content
+    .mypage-user-space
+      =link_to "#",class:'rate-page' do
+        %img{src:"https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"60",height:"60"}
+        %p
+          user-name
+        .rate-page__count
+          .rate-page__count__rate
+            評価  0
+          .rate-page__count__itemnum
+            出品数  0
+    .mypage-todo-space
+      %ul.mypage-tab
+        %li.mypage-notice
+          お知らせ
+        %li.mypage-todo
+          やることリスト
+      .tab-content
+        %ul.notice-list
+          %li.notice-text
+            =link_to "#",class:'mypage-notice-link' do
+              %img{src:"https://static.mercdn.net/images/mercari_profile.png", width:"48",height:"48"}
+              .notice-body
+                事務局から個別メッセージ「Googleログイン通知」
+                .notice-time
+                  %i.fa.fa-cog.fa-lg.icon-arrow
+                  １日前
+              %i.fa.fa-angle-right.fa-lg.icon-arrowc
+          %li.notice-text
+            =link_to "#",class:'mypage-notice-link' do
+              %img{src:"https://static.mercdn.net/images/mercari_profile.png", width:"48",height:"48"}
+              .notice-body
+                事務局から個別メッセージ「Googleログイン通知」
+                .notice-time
+                  %i.fa.fa-cog.fa-lg.icon-arrow
+                  １日前
+              %i.fa.fa-angle-right.fa-lg.icon-arrowc
+          %li.notice-text
+            =link_to "#",class:'mypage-notice-link' do
+              %img{src:"https://static.mercdn.net/images/mercari_profile.png", width:"48",height:"48"}
+              .notice-body
+                事務局から個別メッセージ「Googleログイン通知」
+                .notice-time
+                  %i.fa.fa-cog.fa-lg.icon-arrow
+                  １日前
+              %i.fa.fa-angle-right.fa-lg.icon-arrowc
+          %li.notice-text
+            =link_to "#",class:'mypage-notice-link' do
+              %img{src:"https://static.mercdn.net/images/mercari_profile.png", width:"48",height:"48"}
+              .notice-body
+                事務局から個別メッセージ「Googleログイン通知」
+                .notice-time
+                  %i.fa.fa-cog.fa-lg.icon-arrow
+                  １日前
+              %i.fa.fa-angle-right.fa-lg.icon-arrowc
+          %li.notice-text
+            =link_to "#",class:'mypage-notice-link' do
+              %img{src:"https://static.mercdn.net/images/mercari_profile.png", width:"48",height:"48"}
+              .notice-body
+                事務局から個別メッセージ「Googleログイン通知」
+                .notice-time
+                  %i.fa.fa-cog.fa-lg.icon-arrow
+                  １日前
+              %i.fa.fa-angle-right.fa-lg.icon-arrowc
+          %li.notice-go-list
+            =link_to "#",class:'mypage-go-list' do
+              一覧を見る
+    .mypage-item-history
+      .history-tab-head
+        購入した商品
+      %ul.history-tab
+        %li.history-tab__now
+          取引中
+        %li.history-tab__old
+          過去の取引
+      .history-content
+        .history-content__now
+          取引中の商品がありません
+    
+.exhibit-btn
+  = link_to "", class: "exhibit-btn" do
+    .btn-box
+      .btn-box__text 出品
+      %i.btn-box__font.fa.fa-camera.fa-3x
+    
+= render "items/main_footer"

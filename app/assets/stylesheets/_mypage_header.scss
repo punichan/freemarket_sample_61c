@@ -1,0 +1,83 @@
+#header {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
+  position: relative;
+  z-index: 3;
+  .header{
+    &__contents{
+      &__right{
+        &__like{
+          text-align: center;
+          &__box{
+            padding: 0 14px;
+            display: block;
+            height: 44px;
+            line-height: 32px;
+            .icon-heart{
+              font-size: 18px;
+              color: #ccc;
+              margin-right: 10px;
+            }
+            .like-btn{
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+        &__notice{
+          text-align: center;
+          &__box{
+            padding: 0 14px;
+            display: block;
+            height: 44px;
+            line-height: 32px;
+            .icon-heart{
+              font-size: 20px;
+              color: #ccc;
+              margin-right: 10px;
+            }
+            .notice-btn{
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+        &__todo{
+          text-align: center;
+          &__box{
+            padding: 0 14px;
+            display: block;
+            height: 44px;
+            line-height: 32px;
+            .icon-heart{
+              font-size: 16px;
+              color: #ccc;
+              margin-right: 10px;
+            }
+            .todo-btn{
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+        &__ava{
+          text-align: center;
+          &__box{
+            padding: 0 14px;
+            height: 44px;
+            line-height: 32px;
+            img{
+              border-radius: 50%;
+              margin-right: 10px;
+            }
+            .ava-btn{
+              display: flex;
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
