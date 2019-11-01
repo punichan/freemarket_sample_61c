@@ -1,5 +1,5 @@
 .user-header
-  = link_to "#", class: "header__link" do
+  = link_to "#", class: "user-header__img" do
     = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "header__img"
   %nav.progress
     %ul.progress-bar
@@ -23,7 +23,7 @@
         完了
         .progress-status
 .main
-  .container
+  .user-container
     .registration-head
       %h2.registration-head__title 支払い方法
     .registration-form
@@ -45,12 +45,12 @@
             .exp-date
               = form.label "有効期限", class: "label"
               %span.essential 必須
-              = form.text_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
+              = form.text_field :birth_month_on, autofocus: true, autocomplete: "birth_month_on", class: "select-default"
               %span.exp-month-span 月
-              = fa_icon "chevron-down", class: "icon-chevron-down"
+              = fa_icon "chevron-down", class: "icon-chevron-down4"
               = form.text_field :birth_year_on, autofocus: true, autocomplete: "birth_year_on", class: "select-default"
               %span.exp-year-span 年
-              = fa_icon "chevron-down", class: "icon-chevron-down"
+              = fa_icon "chevron-down", class: "icon-chevron-down5"
           .form-group.cvv
             = form.label :cvv, "セキュリティコード", class: "label"
             %span.essential 必須
