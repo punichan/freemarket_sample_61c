@@ -10,7 +10,7 @@ FactoryBot.define do
     first_name_kana       {"aaa"}
     last_name_kana        {"a"}
     phone_number          {"00000000000"}
-    birth_year_on         {"0000"}
+    birth_year_on         {"1111"}
     birth_month_on        {"00"}
     birth_day_on          {"00"}
   end
