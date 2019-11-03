@@ -1,11 +1,11 @@
 .logout {
   float: right;
-  .logout__box {
+  &__box {
     width: 700px;
     height: 179px;
     background-color: #fff;
     padding-top: 64px;
-    .logout__box__button {
+    &__button {
       background: #ea352d;
       border: 1px solid #ea352d;
       width: 320px;
