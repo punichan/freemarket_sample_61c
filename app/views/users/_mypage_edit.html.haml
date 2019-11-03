@@ -1,0 +1,24 @@
+= render 'user_header'
+.mypage-nav
+  %ul.nav-content
+    %li.bread1
+      メルカリ
+      %i.fa.fa-angle-right.fa-lg.icon-arrow
+    %li.bread2
+      マイページ
+.mypage-container.clearfix
+  = render 'side_bar'
+  .mypage-content
+    .mypage-edit
+      .mypage-edit__head
+        プロフィール
+      .mypage-edit__center
+        .mypage-edit__center__icon
+          =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png",width:"60",height:"60"
+        = form_with method: :post, local: true do |f|
+          = f.text_field :post, placeholder: '例)AYA☆セール中', class:'name-edit-box'
+      .mypage-edit__bottom
+        = form_with method: :post, local: true do |f|
+          = f.text_area :post, placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪', class:'profil-edit-box'
+          %button{type: "submit", class:'profil-edit-button'}
+            変更する
