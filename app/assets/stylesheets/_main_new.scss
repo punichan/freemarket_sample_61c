@@ -1,0 +1,237 @@
+.upload-box{
+  width: 700px;
+  padding: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  &__title{
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__text{
+    margin-top: 8px;
+  }
+  .essential{
+    background-color: #EA352E;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 5px;
+    margin-left: 8px;
+    border-radius: 2px;
+    vertical-align: top;
+  }
+  #item_description{
+    width: 620px;
+    height: 140px;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px 16px 8px;
+  }
+  .form-default{
+    width: 100%; 
+    height: 48px;
+    margin-top: 5px;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    letter-spacing: 1px; 
+  }
+  .form-sell{
+    width: 122%; 
+    height: 48px;
+    margin-top: 5px;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    letter-spacing: 1px; 
+  }
+  .form-delivery-sell{
+    width: 111%; 
+    height: 48px;
+    margin-top: 5px;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    letter-spacing: 1px; 
+  }
+
+  .drop-box{
+    width: 620px;
+    height: 160px;
+    background-color: rgb(238, 232, 232);
+    border: 1px dashed #CCCCCC;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    &__content{
+      position: absolute;
+      top: 32%;
+      left: 29%;
+      font-size:14px;
+      font-weight: bold;
+    }
+    &__text{
+      margin-top: 10px;
+    }
+  }
+}
+
+.sell-flex{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  height: 181px;
+  .sell-text{
+    font-size: 14px;
+    font-weight:bold; 
+    color: #888888;
+    position: absolute;
+    left: 0%;
+  }
+  .sell-box{
+    position: absolute;
+    left: 35%;
+  }
+}
+.sell-delivery-flex{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  height: 300px;
+  .sell-text{
+    font-size: 14px;
+    font-weight:bold; 
+    color: #888888;
+    position: absolute;
+    left: 0%;
+  }
+  .form-question{
+    position: absolute;
+    left: 14%;
+  }
+  .form-question-2{
+    position: absolute;
+    left: 27%;
+  }
+  .icon-question-circle{
+    color: #0199E8;
+    font-size: 16px;
+  }
+  .sell-box{
+    position: absolute;
+    left: 35%;
+    .price{
+      display: flex;
+      justify-content: space-between;
+      width: 485px;
+      padding-bottom: 20px;
+      &__left{
+        width: 40%;
+        line-height: 53px;
+        .price__title{
+          display: inline;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+      &__right{
+        margin-right: 42px;
+        position: relative;
+      }
+      .yen{
+        width:10px;
+        position: absolute;
+        top: 22px;
+        left: 34px;
+      }
+    }
+    .fee{
+      display: flex;
+      justify-content: space-between;
+      width: 395px;
+      height: 65px;
+      line-height: 65px;
+      border-top: 1px solid #f5f5f5;
+    }
+    .profit{
+      display: flex;
+      justify-content: space-between;
+      width: 395px;
+      height: 65px;
+      line-height: 65px;
+      border-top: 1px solid #f5f5f5;
+      &__left{
+        font-size: 18px;
+        font-weight: bold;
+      }
+      &__right{
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+  .sell-form-box{
+    width: 50%;
+  }
+  .form-price{
+    width: 60%;
+    height: 48px;
+    margin-top: 5px;
+    margin-left: 50px;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    letter-spacing: 1px; 
+    text-align: right;
+  }
+  
+}
+.hidden{
+  display: none; 
+}
+.sell-price-flex{
+@extend .sell-delivery-flex;
+height: 227px;
+}
+.sell-content{
+  padding: 40px;
+  .sell-text{
+    line-height: 1.5;
+  }
+}
+.btn-sell{
+  display: block;
+  width: 90%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #EA352E;
+  border: none;
+  margin: 60px auto 15px;
+  &__link{
+    display: block;
+    text-decoration: none; 
+    color: #fff;
+  }
+}
+.btn-back{
+  display: block;
+  width: 50%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #AAAAAA;
+  border: none;
+  margin: 60px auto 15px;
+  &__link{
+    display: block;
+    text-decoration: none; 
+    color: #fff;
+  }
+}
+
