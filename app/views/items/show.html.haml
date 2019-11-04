@@ -6,7 +6,7 @@
     %h2.box-header 購入内容の確認
     .box-detail 
       .item-detail
-        %img{class: "item-detail__image", alt: "", src:"https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195"}/
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195", class: "item-detail__image"
         %p.item-detail__title とらんぷトランプトランプトランプトランプトランプトランプ
       .item-pricebox
         %span.item-pricebox__price 
@@ -49,8 +49,8 @@
         %br
           **/**
         %br
-        %img{class:"info-img",alt:"", src:"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?465897195"}/
-        =link_to "", class: "info-edit" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?465897195", class:"info-img"
+        = link_to "", class: "info-edit" do
           %span 変更する >
     
 .myuser-footer
