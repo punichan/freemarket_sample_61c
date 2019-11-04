@@ -1,0 +1,77 @@
+= render "user_header"
+.mypage-nav
+  %ul.nav-content
+    %li.breadfri
+      メルカリ
+      %i.fa.fa-angle-right.fa-lg.icon-arrow
+    %li.breadsec
+      マイページ
+      %i.fa.fa-angle-right.fa-lg.icon-arrow
+    %li.breadthr
+      本人情報の確認
+
+.mypage-container.clearfix
+  = render "side_bar"
+  .mypage-content
+    %h2.myedit-header 
+      本人情報の登録
+    =form_with model: @user, class:"main-edit", local: true do |f|
+      .explanation
+        %p.explanation__text 
+          お客様の本人情報をご登録ください。
+        %br 
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要となります。
+        = link_to "", class: "explanation__more" do
+          本人確認書類のアップロードについて ＞
+          
+      .main-box
+        %p.main-box__name 
+          お名前
+        %p.explanation__text 
+          市川 真己
+
+      .main-box
+        %p.main-box__name 
+          お名前カナ
+        %p.explanation__text 
+          イチカワ マサミ
+
+      .main-box
+        %p.main-box__name 
+          生年月日
+        %p.explanation__text
+          1991/02/29
+
+      .main-box
+        = f.label :postal_code, "郵便番号", class:"main-box__font"
+        %span.required 必須
+        = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "例）123-4567", class: "main-box__form"
+        
+      .main-box  
+        = f.label :prefecture, "都道府県", class:"main-box__font"
+        %span.required 必須
+        = f.text_field :prefecture, autofocus: true, autocomplete: "postal_code", placeholder: "", class: "main-box__form"
+
+      .main-box
+        = f.label :city, "市区町村", class:"main-box__font"
+        %span.required 必須
+        = f.text_field :city, autofocus: true, autocomplete: "postal_code", placeholder: "例 横浜市緑区", class: "main-box__form"
+        
+      .main-box
+        = f.label :town, "番地", class:"main-box__font"
+        %span.required 必須
+        = f.text_field :town, autofocus: true, autocomplete: "postal_code", placeholder: "例）青山1-1-1", class: "main-box__form"
+        
+      .main-box
+        = f.label :building, "建物名", class:"main-box__font"
+        %span.required 必須
+        = f.text_field :building, autofocus: true, autocomplete: "postal_code", placeholder: "例) マサミビル", class: "main-box__form"
+
+      .main-box
+        = f.submit "登録する", class: "btn-text"
+
+      .main-box
+        =link_to "", class: "about-text" do
+          本人情報の登録について ＞
+
+= render "items/main_footer"
