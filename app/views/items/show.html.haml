@@ -1,0 +1,68 @@
+.user-header
+  = link_to "#" do
+    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "user-header__img"
+.purchase-main
+  .main-box
+    %h2.box-header 購入内容の確認
+    .box-detail 
+      .item-detail
+        %img{class: "item-detail__image", alt: "", src:"https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195"}/
+        %p.item-detail__title とらんぷトランプトランプトランプトランプトランプトランプ
+      .item-pricebox
+        %span.item-pricebox__price 
+          ¥5,500
+        %span.item-pricebox__text 
+          送料込み
+
+      = form_with method: :post, class: :purchase_way, local: true do |f|
+        .purchase_way__point
+          .purchase_way__point--font
+            ポイントはありません
+        .purchase_way__price
+          .purchase_way__price__text
+            支払い金額
+          .purchase_way__price__num
+            ¥5,500
+        = f.submit "購入する", class:'purchase_way__btn'
+
+    .box-border
+      .box-detail
+        .info-box
+          %h3.info-title 
+            配送先
+        %address.info-text
+          〒564-0071
+        %br
+          大阪府 吹田市西の庄町 4-3
+        %br
+          市川 真巳
+        =link_to "", class: "info-edit" do
+          %span 変更する >
+
+    .box-border
+      .box-detail
+        .info-box
+          %h3.info-title 
+            支払い方法
+        %address.info-text
+          *********************
+        %br
+          **/**
+        %br
+        %img{class:"info-img",alt:"", src:"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?465897195"}/
+        =link_to "", class: "info-edit" do
+          %span 変更する >
+    
+.myuser-footer
+  .user-container
+    .nav
+      %ul.nav-list
+        %li
+          = link_to "プライバシーポリシー ",  "#", class: "nav-list__item "
+        %li
+          = link_to "メルカリ利用規約", "#", class: "nav-list__item "
+        %li
+          = link_to "特定商取引に関する表記", "#", class: "nav-list__item "
+    = link_to "#" do
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", class: "footer-img"
+    %small © 2019 Mercari
