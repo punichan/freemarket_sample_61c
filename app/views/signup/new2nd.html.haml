@@ -28,7 +28,7 @@
       %h2.registration-head__title 電話番号の確認
     .registration-form
       .form-wrapper
-        = form_with model: @user, url: "/user", id:"new_user", class:"new_user", local: true do |form|
+        = form_with model: @user, url: signup_index_path, method: :post, id:"new_user", class:"new_user", local: true do |form|
           .form-group
             = form.label :phone_number, "携帯の電話番号", class: "label"
             = form.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "携帯電話の番号を入力", class: "form-default"
@@ -36,7 +36,7 @@
             %p 本人確認のため、携帯電話のSMS(ショートメッセ
             %p ージサービス)を利用して認証を行います。
           %button.registration-form__content__btn
-            = link_to "SMSを送信する", "#"
+            = form.submit "SMSを送信する"
           .form-text-info
             %p ※ 電話番号は本人確認や不正利用防止のために利用
             %p します。他のユーザーに公開されることはありま

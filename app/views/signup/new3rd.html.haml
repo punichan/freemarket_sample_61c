@@ -28,7 +28,7 @@
       %h2.registration-head__title 住所入力
     .registration-form
       .form-wrapper
-        = form_with model: @user, url: "/user", id:"new_user", class:"new_user", local: true do |form|
+        = form_with model: @user, url: new4th_signup_index_path, method: :get, id:"new_user", class:"new_user", local: true do |form|
           .form-group
             = form.label :postal_code, "郵便番号", class: "label"
             %span.essential 必須

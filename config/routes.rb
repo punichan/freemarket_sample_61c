@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'new2nd'
       get 'new3rd'
       get 'new4th'
-      get 'new5th'
+      get 'done'
     end
   end
 end
