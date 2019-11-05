@@ -17,12 +17,11 @@ class SignupController < ApplicationController
     session[:birth_year_on]         = user_params[:birth_year_on]
     session[:birth_month_on]        = user_params[:birth_month_on]
     session[:birth_day_on]          = user_params[:birth_day_on]
-    # binding.pry
   end
   
   def new3rd
+    @user = User.new()
     session[:phone_number] = user_params[:phone_number]
-    @user = User.new
 
   end
   
@@ -48,9 +47,8 @@ class SignupController < ApplicationController
       birth_year_on:          session[:birth_year_on], 
       birth_month_on:         session[:birth_month_on], 
       birth_day_on:           session[:birth_day_on], 
-      phone_number:           user_params[:phone_number]
+      phone_number:           session[:phone_number]
     )
-    # binding.pry
     @user.save!
     
 
@@ -79,6 +77,7 @@ class SignupController < ApplicationController
       :birth_year_on,
       :birth_month_on,
       :birth_day_on,
+      address_attributes: [:user_id, ]
     )
   end
 end
