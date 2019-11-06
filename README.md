@@ -121,7 +121,7 @@
 |------|----|-------|
 |name|string|null: false|
 |item_description|text|null: false|
-|brand_id|references|foreign_key, null: false|
+|brand_id|references|foreign_key: true|
 |condition|integer|null: false|
 |delivery_way|integer|null: false|
 |delivery_burden|integer|null: false|
@@ -142,7 +142,7 @@
 - has_many:likes
 - has_many:messages
 - has_many:items-categories      
-- has_many:categories, through:　:items-categories    
+- has_many:categories, through: :items-categories    
 
 
 ## brandsテーブル
