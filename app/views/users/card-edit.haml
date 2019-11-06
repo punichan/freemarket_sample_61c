@@ -1,0 +1,29 @@
+= render 'user_header'
+.mypage-nav
+  %ul.nav-content
+    %li.bread1
+      メルカリ
+      %i.fa.fa-angle-right.fa-lg.icon-arrow
+    %li.bread2
+      マイページ
+.mypage-container.clearfix
+  = render 'side_bar'
+  .mypage-content
+    .card-registration
+      .card-registration__heed
+        支払い方法
+      .card-registration__medium
+        .card-registration__medium__top
+          クレジットカード一覧
+        .card-registration__medium__main
+          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?465897195",width:"49",height:"15"
+          %button{type: "submit", class:'card-delete-button'}
+            消去する
+          .card-registration__medium__number
+            ************7802
+          .card-registration__medium__date
+            10 / 24
+      .card-registration__bottom
+        = link_to "#", class:"payment-explanation" do
+          支払い方法について
+          = fa_icon "chevron-right", class: "icon-chevron-right"
