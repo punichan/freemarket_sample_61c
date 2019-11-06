@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_082653) do
+ActiveRecord::Schema.define(version: 2019_11_06_052118) do
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "item_description", null: false
+    t.integer "condition", null: false
+    t.integer "delivery_way", null: false
+    t.integer "delivery_burden", null: false
+    t.integer "origin_of_delivery", null: false
+    t.integer "shipment_days", null: false
+    t.integer "price", null: false
+    t.integer "size", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "brand_id"
+    t.integer "saler_id", null: false
+    t.integer "buyer_id", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
