@@ -22,6 +22,7 @@ class SignupController < ApplicationController
   def new3rd
     @user = User.new()
     session[:phone_number] = user_params[:phone_number]
+    @user.addresses.build
 
   end
   
@@ -47,9 +48,17 @@ class SignupController < ApplicationController
       birth_year_on:          session[:birth_year_on], 
       birth_month_on:         session[:birth_month_on], 
       birth_day_on:           session[:birth_day_on], 
-      phone_number:           session[:phone_number]
+      phone_number:           session[:phone_number],
+      addresses_attributes: user_params[:addresses_attributes]
     )
+    user = User.new(user_params)
+    # binding.pry
+    # @user.addresses.build(user_params[:addresses_attributes])
     @user.save!
+    if @user.save
+      session[:id] = @user.id
+      redirect_to done_signup_index_path
+    end
     
 
     # if verify_recaptcha
@@ -77,7 +86,7 @@ class SignupController < ApplicationController
       :birth_year_on,
       :birth_month_on,
       :birth_day_on,
-      address_attributes: [:user_id, ]
+      addresses_attributes: [:postal_code, :prefecture, :city, :town, :building]
     )
   end
 end
