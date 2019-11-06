@@ -82,3 +82,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+gem "gretel"

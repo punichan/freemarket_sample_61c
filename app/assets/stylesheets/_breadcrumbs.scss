@@ -1,0 +1,24 @@
+ .breadcrumbs-list {
+  display: flex;
+  padding: 16px 0;
+  margin-left: 210px;
+  a:hover {
+    text-decoration: underline;
+    color: #333;
+    opacity: .7;
+    } 
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  p {
+    font-size: 30px;
+    font-weight: 100;
+    color: #333;
+    opacity: .7;
+    margin: -8px 10px 0px 10px;
+  }
+  .current {
+    font-weight: bold;
+  }
+}
