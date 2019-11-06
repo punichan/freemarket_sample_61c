@@ -9,6 +9,7 @@
           = f.text_field :search, placeholder: '何かお探しですか？', class:'search-box'
           %button{type: "submit"}
             =fa_icon "search", class:'fa-search'
+     
     .header__contents
       .header__contents__left
         .header__contents__left__caegory
@@ -28,3 +29,5 @@
         .header__contents__right__login
           .header__contents__right__login__box
             =link_to "ログイン", "#", class:"login-btn"
+    -if user_signed_in?
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
