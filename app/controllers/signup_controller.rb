@@ -71,8 +71,7 @@ class SignupController < ApplicationController
       )
     end
     user = User.new(user_params)
-    # binding.pry
-    # @user.addresses.build(user_params[:addresses_attributes])
+
     @user.save!
     if @user.save
       session[:id] = @user.id
@@ -83,7 +82,7 @@ class SignupController < ApplicationController
       sign_in User.find(session[:id]) unless user_signed_in?
     end
     
-
+    #後ほど利用予定
     # if verify_recaptcha
     #   super
     # else
