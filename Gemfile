@@ -82,9 +82,16 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+
+gem "devise"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 gem 'nokogiri'
 gem 'carrierwave'
 gem 'ancestry'
 gem 'active_hash'
 gem 'dropzonejs-rails'
 gem 'mechanize'
+

@@ -10,6 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2019_11_06_070615) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "postal_code", null: false
+    t.integer "prefecture", null: false
+    t.string "city", null: false
+    t.string "town", null: false
+    t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 ActiveRecord::Schema.define(version: 2019_11_06_052118) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,12 +75,11 @@ ActiveRecord::Schema.define(version: 2019_11_06_052118) do
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
-    t.integer "phone_number", null: false
-    t.date "birth_year_on", null: false
-    t.date "birth_month_on", null: false
-    t.date "birth_day_on", null: false
+    t.string "phone_number", null: false
+    t.integer "birth_year_on", null: false
+    t.integer "birth_month_on", null: false
+    t.integer "birth_day_on", null: false
     t.text "profile"
-    t.integer "point", null: false
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

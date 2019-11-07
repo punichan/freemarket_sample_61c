@@ -9,11 +9,11 @@
         = link_to "新規会員登録"
       .login-panel__sns-login
         %button#facebook.btn-sns
-          =link_to "#" do
+          = link_to user_facebook_omniauth_authorize_path do
             %i.fa.fa-facebook-square.fa-lg.icon-facebook
             Facebookでログイン
         %button#google.btn-sns
-          =link_to "#" do
+          = link_to user_google_oauth2_omniauth_authorize_path do
             %i.fa.fa-google.icon-google
             Googleでログイン
       = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
@@ -23,7 +23,7 @@
           .login-form--password
             = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード",class: "password__input"
           .login-form--recapcha
-            私はロボットではありません（recaptcha_tags使用予定）
+            = recaptcha_tags
           = f.submit "ログイン", class:"login-form--login-btn"
           =link_to "パスワードをお忘れの方"
     = render "devise/registrations/footer"

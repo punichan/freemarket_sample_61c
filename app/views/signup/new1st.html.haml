@@ -1,5 +1,5 @@
 .user-header
-  = link_to "#", class: "user-header__img" do
+  = link_to "/", class: "user-header__img" do
     = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "header__img"
   %nav.progress
     %ul.progress-bar
@@ -28,7 +28,7 @@
       %h2.registration-head__title 会員情報入力
     .registration-form
       .form-wrapper
-        = form_with model: @user, url: "/user", id:"new_user", class:"new_user", local: true do |form|
+        = form_with model: @user, url: new2nd_signup_index_path, method: :get, id:"new_user", class:"new_user", local: true do |form|
           .form-group
             = form.label :image, "ニックネーム", class: "label"
             %span.essential 必須
@@ -37,14 +37,15 @@
             = form.label :email, "メールアドレス", class: "label"
             %span.essential 必須
             = form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "form-default"
-          .form-group
-            = form.label :password, "パスワード", class: "label"
-            %span.essential 必須
-            = form.password_field :password, autofocus: true, autocomplete: "password", placeholder: "7文字以上", class: "form-default"
-          .form-group
-            = form.label :password, "パスワード（確認）", class: "label"
-            %span.essential 必須
-            = form.password_field :password, autofocus: true, autocomplete: "password", placeholder: "7文字以上", class: "form-default"
+          - if @sns.blank?
+            .form-group
+              = form.label :password, "パスワード", class: "label"
+              %span.essential 必須
+              = form.password_field :password, autofocus: true, autocomplete: "password", placeholder: "7文字以上", class: "form-default"
+            .form-group
+              = form.label :password_confirmation, "パスワード（確認）", class: "label"
+              %span.essential 必須
+              = form.password_field :password_confirmation, autofocus: true, autocomplete: "password", placeholder: "7文字以上", class: "form-default"
           .form-group
             %h3 本人確認
             %p 安心・安全にご利用いただくために、お客さまの本人
@@ -79,13 +80,13 @@
             %p ※ 本人情報は正しく入力してください。会員登録後、
             %p 修正するにはお時間を頂く場合があります。
           .form-group
-            私はロボットではありません（recaptcha_tags使用予定）)
+            = recaptcha_tags
           .form-group
             %p「次へ進む」のボタンを押すことにより、利用規約に
             %p 同意したものとみなします
           %button.registration-form__content__btn
-            = link_to "次へ進む", "#"
+            = form.submit "次へ進む"
           = link_to "#", class:"explanation-info" do
             本人情報の登録について
             = fa_icon "chevron-right", class: "icon-chevron-right"
-= render "footer"
+= render "devise/registrations/footer"
