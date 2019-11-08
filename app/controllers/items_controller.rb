@@ -3,7 +3,12 @@ class ItemsController < ApplicationController
   end
   def new
     @item = Item.new
+    @categories = Category.all
   end
   def create
+    
   end
+
+  private
+  
 end
