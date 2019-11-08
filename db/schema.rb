@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 2019_11_06_070615) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-ActiveRecord::Schema.define(version: 2019_11_06_052118) do
-
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
@@ -60,6 +52,14 @@ ActiveRecord::Schema.define(version: 2019_11_06_052118) do
     t.integer "brand_id"
     t.integer "saler_id", null: false
     t.integer "buyer_id", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
