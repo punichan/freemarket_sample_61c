@@ -3,7 +3,27 @@ crumb :root do
 end
 
 crumb :users do
-  link "マイページ", user_path
+  link "マイページ", "show"
+end
+
+crumb :profile do
+  link "プロフィール", mypage_edit_users_path
+  parent :users
+end
+
+crumb :payment do
+  link "支払い方法", card_edit_users_path
+  parent :users
+end
+
+crumb :selfinfo do
+  link "本人情報", identification_users_path
+  parent :users
+end
+
+crumb :logout do
+  link "ログアウト", logout_users_path
+  parent :users
 end
 
 # crumb :projects do
