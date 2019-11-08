@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
   resources :items
-  resources :users, only: [:show]
+  resources :users do
+    collection do
+      get 'logout'
+      get 'card_edit'
+      get 'mypage_edit'
+      get 'identification'
+    end
+  end
   resources :signup do
     collection do
       get 'new1st'

@@ -94,4 +94,5 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'dropzonejs-rails'
 gem 'mechanize'
+gem 'gretel'
 

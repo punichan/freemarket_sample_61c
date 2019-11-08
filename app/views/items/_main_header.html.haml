@@ -2,7 +2,7 @@
   .header
     .header__main
       .header__main__logo
-        %a.mercarilogo{href: "リンク切れ"}
+        = link_to root_path,class:"mercarilogo" do
           %img{alt: "mercari", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
       .header__main__search
         = form_with method: :get, local: true do |f|
@@ -22,12 +22,35 @@
             .header__contents__left__brand__box__icon
               =fa_icon "tag", class:'brand__icon'
               ブランドから探す
-      .header__contents__right
-        .header__contents__right__signup
-          .header__contents__right__signup__box
-            =link_to "新規会員登録", "#", class:"signup-btn"
-        .header__contents__right__login
-          .header__contents__right__login__box
-            =link_to "ログイン", "#", class:"login-btn"
-    -if user_signed_in?
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      -if user_signed_in?
+        .header__contents__right
+          .header__contents__right__like
+            .header__contents__right__like__box
+              =link_to "#", class:"like-btn" do
+                %i.fa.fa-heart.fa-lg.icon-heart
+                いいね！一覧
+          .header__contents__right__notice
+            .header__contents__right__notice__box
+              =link_to "#", class:"notice-btn" do
+                %i.fa.fa-bell.fa-lg.icon-heart
+                お知らせ
+          .header__contents__right__todo
+            .header__contents__right__todo__box
+              =link_to "#", class:"todo-btn" do
+                %i.fa.fa-check.fa-lg.icon-heart
+                やることリスト
+          .header__contents__right__ava
+            .header__contents__right__ava__box
+              =link_to user_path(current_user.id), class:"ava-btn" do
+                = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32",height:"32"
+                マイページ
+      -else
+        .header__contents__right
+          .header__contents__right__signup
+            .header__contents__right__signup__box
+              =link_to new_user_registration_path class:"signup-btn" do
+                新規会員登録
+          .header__contents__right__login
+            .header__contents__right__login__box
+              =link_to new_user_session_path, class:"login-btn" do
+                ログイン
