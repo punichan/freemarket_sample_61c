@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :addresses
   has_many :sns_credentials
+  has_many :items
   accepts_nested_attributes_for :addresses
   accepts_nested_attributes_for :sns_credentials
 

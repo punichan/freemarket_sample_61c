@@ -99,13 +99,20 @@
       height: 60px;
       width: 620px;
       margin-top: 16px;
-      color: #FFFF;
       text-align: center;
       line-height: 60px;
-      font-size: 30px;
-      font-weight: bold;
       margin: 0 auto;
       background-color:#EA352A;
+      font-weight: bold;
+      font-size: 30px;
+      color: #FFFF;
+      text-decoration: none;
+      a{
+        font-weight: bold;
+        font-size: 30px;
+        color: #FFFF;
+        text-decoration: none;
+      }
     }
     .item-description-inner{
       width: 620px;

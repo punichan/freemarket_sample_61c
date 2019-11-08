@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   root to: 'items#index'
-  resources :items
+  resources :items do
+    collection do
+      get 'buycheck'
+    end
+  end
   resources :users do
     collection do
       get 'logout'
