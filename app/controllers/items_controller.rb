@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index
 
   def index
+    b
   end
 
   def new
