@@ -2,15 +2,13 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index
 
   def index
-    a
-    b
   end
 
   def new
     @item = Item.new
     @item.images.build
     # @categories = Category.all
-    # @prefecture = Prefecture.all
+    @prefecture = Prefecture.all
   end
 
   def create
