@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     a
+    b
   end
 
   def new
