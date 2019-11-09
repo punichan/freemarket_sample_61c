@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  belongs_to :user
+  belongs_to :buyer, class_name: "User", optional: true
+  belongs_to :saler, class_name: "User"
   belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture

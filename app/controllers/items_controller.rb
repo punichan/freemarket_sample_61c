@@ -12,7 +12,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create!(item_params)
+    @item = Item.new(item_params)
+    @item.saler_id = current_user.id
+    @item.save!
+
     redirect_to action: 'index'
   end
 
