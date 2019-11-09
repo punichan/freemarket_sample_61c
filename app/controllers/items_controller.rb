@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index
 
   def index
+    a
   end
 
   def new
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
       :shipment_days,
       :price, :saler_id,
       :buyer_id,
-        image_attributes:[:image])
+      image_attributes:[:image])
   end
 
   # def move_to_signup
