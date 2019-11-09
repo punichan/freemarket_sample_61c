@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     # @categories = Category.all
-    # @prefecture = Prefecture.all
+    @prefecture = Prefecture.all
   end
 
   def create
