@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
+    # binding.pry
     @item.saler_id = current_user.id
     @item.save!
 
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :shipment_days_id,
       :buyer_id,
-      image_attributes:[:image])
+      images_attributes: [:images])
   end
 
   # def move_to_signup
