@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before action :move_to_signup, expcept: :index
+  before action :move_to_signup, expcept: :index
 
   def index
   end
@@ -7,17 +7,18 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    # @categories = Category.all
+    @categories = Category.all
     @prefecture = Prefecture.all
   end
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
     @item.saler_id = current_user.id
-    @item.save!
-
-    redirect_to action: 'index'
+    if @item.save!
+      redirect_to action: 'index'
+    else
+      redirect_to action: 'new'
+    end
   end
 
   private
@@ -40,7 +41,7 @@ class ItemsController < ApplicationController
       images_attributes: [:images])
   end
 
-  # def move_to_signup
-  #   redirect_to 'new_user_session_path' unless user_signed_in?
-  # end
+  def move_to_signup
+    redirect_to 'new_user_session_path' unless user_signed_in?
+  end
 end
