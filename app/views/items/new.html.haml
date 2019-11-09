@@ -34,7 +34,7 @@
               .form-group
                 %h4.upload-box__title カテゴリー
                 %span.essential 必須
-                = form.text_field :category_id, class: "form-sell", value:"---"
+                = form.collection_select :category_id, Category.all, :id, :name, class: "form-sell"
               .form-group
                 %h4.upload-box__title サイズ
                 %span.essential 必須
