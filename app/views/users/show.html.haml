@@ -1,11 +1,7 @@
 = render "user_header"
 .mypage-nav
-  %ul.nav-content
-    %li.bread1
-      メルカリ
-      %i.fa.fa-angle-right.fa-lg.icon-arrow
-    %li.bread2
-      マイページ
+  - breadcrumb :users
+  = render "layouts/breadcrumbs"
 .mypage-container.clearfix
   = render "side_bar"
   .mypage-content
@@ -13,7 +9,7 @@
       =link_to "#",class:'rate-page' do
         = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"60",height:"60"
         %p
-          user-name
+          = current_user.nickname
         .rate-page__count
           .rate-page__count__rate
             評価  0
@@ -88,7 +84,7 @@
           取引中の商品がありません
     
 .exhibit-btn
-  = link_to "", class: "exhibit-btn" do
+  = link_to new_item_path, class: "exhibit-btn" do
     .btn-box
       .btn-box__text 出品
       %i.btn-box__font.fa.fa-camera.fa-3x

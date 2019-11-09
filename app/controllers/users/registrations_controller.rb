@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  
   def new
   end
   # GET /resource/sign_up
@@ -11,9 +12,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    if verify_recaptcha
+      super
+    else
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
+    end
+  end
 
   # GET /resource/edit
   # def edit

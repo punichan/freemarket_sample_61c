@@ -20,7 +20,13 @@ body{
 @import "mypage_header";
 @import "mypage";
 @import "main_new";
-
+@import "breadcrumbs.scss";
+@import "log_out";
+@import "credit-card";
+@import "identification";
+@import "mypage_edit";
+@import "purchase";
+@import "item_show";
 
 *{
   box-sizing: border-box;

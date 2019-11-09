@@ -1,0 +1,14 @@
+= render 'user_header'
+.mypage-nav
+  - breadcrumb :logout
+  = render "layouts/breadcrumbs"
+.mypage-container.clearfix
+  = render 'side_bar'
+  - if user_signed_in?
+    .mypage-content
+      .logout
+        .logout__box
+          .logout__box__button
+            =link_to destroy_user_session_path, method: :delete, class:"logout-btn" do
+              ログアウト
+= render "items/main_footer"

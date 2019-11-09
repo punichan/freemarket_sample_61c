@@ -1,14 +1,7 @@
 = render "user_header"
 .mypage-nav
-  %ul.nav-content
-    %li.breadfri
-      メルカリ
-      %i.fa.fa-angle-right.fa-lg.icon-arrow
-    %li.breadsec
-      マイページ
-      %i.fa.fa-angle-right.fa-lg.icon-arrow
-    %li.breadthr
-      本人情報の確認
+  - breadcrumb :selfinfo
+  = render "layouts/breadcrumbs"
 
 .mypage-container.clearfix
   = render "side_bar"

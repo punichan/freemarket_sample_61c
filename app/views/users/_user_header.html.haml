@@ -2,7 +2,7 @@
   .header
     .header__main
       .header__main__logo
-        =link_to "リンク切れ", class:"mercarilogo" do
+        =link_to root_path, class:"mercarilogo" do
           =image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", alt: "mercari"
       .header__main__search
         = form_with method: :get, local: true do |f|
@@ -39,6 +39,6 @@
               やることリスト
         .header__contents__right__ava
           .header__contents__right__ava__box
-            =link_to "#", class:"ava-btn" do
+            =link_to user_path(current_user.id), class:"ava-btn" do
               = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32",height:"32"
               マイページ
