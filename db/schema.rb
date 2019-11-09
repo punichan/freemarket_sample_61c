@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_070615) do
+ActiveRecord::Schema.define(version: 2019_11_09_102732) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -37,21 +37,31 @@ ActiveRecord::Schema.define(version: 2019_11_06_070615) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "images", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "item_description", null: false
-    t.integer "condition", null: false
-    t.integer "delivery_way", null: false
-    t.integer "delivery_burden", null: false
-    t.integer "origin_of_delivery", null: false
-    t.integer "shipment_days", null: false
     t.integer "price", null: false
-    t.integer "size", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "brand_id"
     t.integer "saler_id", null: false
-    t.integer "buyer_id", null: false
+    t.integer "category_id", null: false
+    t.integer "shoes_size_id"
+    t.integer "clothes_size_id"
+    t.integer "condition_id", null: false
+    t.integer "delivery_way_id", null: false
+    t.integer "delivery_burden_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "shipment_days_id", null: false
+    t.integer "buyer_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

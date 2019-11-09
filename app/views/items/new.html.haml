@@ -11,12 +11,13 @@
           %h3.upload-box__title 出品画像 
           %span.essential 必須
           %p.upload-box__text 最大10枚までアップロードできます
-          = form.label :image do
-            .drop-box
-              .drop-box__content
-                %p.drop-box__text ドラッグアンドドロップ
-                %p.drop-box__text またはクリックしてファイルをアップロード
-            = form.file_field :image, class: "hidden"
+          = form.fields_for :images do |img|
+            = img.label :images do
+              .drop-box
+                .drop-box__content
+                  %p.drop-box__text ドラッグアンドドロップ
+                  %p.drop-box__text またはクリックしてファイルをアップロード
+            = img.file_field :images, class: "hidden"
         .upload-box
           %h4.upload-box__title 商品名
           %span.essential 必須
@@ -33,12 +34,16 @@
               .form-group
                 %h4.upload-box__title カテゴリー
                 %span.essential 必須
-                = form.text_field :category, class: "form-sell", value:"---"
+                = form.collection_select :category_id, Category.all, :id, :name, class: "form-sell"
+              .form-group
+                %h4.upload-box__title サイズ
+                %span.essential 必須
+                = form.text_field :clothes_size_id, class: "form-sell", value:"---"
               .space
               .form-group
                 %h4.upload-box__title 商品の状態
                 %span.essential 必須
-                = form.text_field :condition, class: "form-sell", value:"---"
+                = form.text_field :condition_id, class: "form-sell", value:"---"
         .upload-box
           .sell-delivery-flex
             %h4.sell-text 配送について
@@ -48,17 +53,22 @@
               .form-group
                 %h4.upload-box__title 配送量の負担
                 %span.essential 必須
-                = form.text_field :delivery_burden, class: "form-delivery-sell", value:"---"
+                = form.text_field :delivery_burden_id, class: "form-delivery-sell", value:"---"
+              .space
+              .form-group
+                %h4.upload-box__title 配送方法
+                %span.essential 必須
+                = form.text_field :delivery_way_id, class: "form-delivery-sell", value:"---"
               .space
               .form-group
                 %h4.upload-box__title 発送元の地域
                 %span.essential 必須
-                = form.text_field :origin_of_delivery, class: "form-delivery-sell", value:"---"
+                = form.text_field :prefecture_id, class: "form-delivery-sell", value:"---"
               .space
               .form-group
                 %h4.upload-box__title 発送までの日数
                 %span.essential 必須
-                = form.text_field :shipment_days, class: "form-delivery-sell", value:"---"
+                = form.text_field :shipment_days_id, class: "form-delivery-sell", value:"---"
         .upload-box
           .sell-price-flex
             %h4.sell-text 販売価格(300〜9,999,999)
@@ -84,8 +94,7 @@
             %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
             %p り処罰される可能性があります。
             %p また、出品をもちまして加盟店規約に同意したことになります。
-          %button.btn-sell
-            = link_to "出品する", "#", class: "btn-sell__link"
+          = form.submit
           %button.btn-back
             = link_to "戻る", "#", class: "btn-back__link"
 = render "devise/registrations/footer"
