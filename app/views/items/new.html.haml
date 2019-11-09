@@ -11,7 +11,7 @@
           %h3.upload-box__title 出品画像 
           %span.essential 必須
           %p.upload-box__text 最大10枚までアップロードできます
-          = form.fields_for :image do |img|
+          = form.fields_for :images do |img|
             = img.label :image 
             .drop-box
               .drop-box__content
@@ -34,7 +34,11 @@
               .form-group
                 %h4.upload-box__title カテゴリー
                 %span.essential 必須
-                = form.text_field :category, class: "form-sell", value:"---"
+                = form.text_field :category_id, class: "form-sell", value:"---"
+              .form-group
+                %h4.upload-box__title サイズ
+                %span.essential 必須
+                = form.text_field :size, class: "form-sell", value:"---"
               .space
               .form-group
                 %h4.upload-box__title 商品の状態
@@ -52,6 +56,11 @@
                 = form.text_field :delivery_burden, class: "form-delivery-sell", value:"---"
               .space
               .form-group
+                %h4.upload-box__title 配送方法
+                %span.essential 必須
+                = form.text_field :delivery_way, class: "form-delivery-sell", value:"---"
+              .space
+              .form-group
                 %h4.upload-box__title 発送元の地域
                 %span.essential 必須
                 = form.text_field :origin_of_delivery, class: "form-delivery-sell", value:"---"
@@ -60,6 +69,14 @@
                 %h4.upload-box__title 発送までの日数
                 %span.essential 必須
                 = form.text_field :shipment_days, class: "form-delivery-sell", value:"---"
+              .form-group
+                %h4.upload-box__title buyer_id
+                %span.essential 必須
+                = form.text_field :buyer_id, class: "form-delivery-sell", value:"---"
+              .form-group
+                %h4.upload-box__title  seler_id
+                %span.essential 必須
+                = form.text_field :saler_id, class: "form-delivery-sell", value:"---" 
         .upload-box
           .sell-price-flex
             %h4.sell-text 販売価格(300〜9,999,999)
@@ -85,8 +102,7 @@
             %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
             %p り処罰される可能性があります。
             %p また、出品をもちまして加盟店規約に同意したことになります。
-          %button.btn-sell
-            = link_to "出品する", "#", class: "btn-sell__link"
+          = form.submit
           %button.btn-back
             = link_to "戻る", "#", class: "btn-back__link"
 = render "devise/registrations/footer"

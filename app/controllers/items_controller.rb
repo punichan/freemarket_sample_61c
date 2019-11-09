@@ -12,12 +12,25 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.create!(item_params)
+    redirect_to action: 'index'
   end
 
   private
   def item_params
-    params.require().permit()
+    params.require(:item).permit(
+      :name,
+      :item_description,
+      :category_id,
+      :size, 
+      :condition,
+      :delivery_burden,
+      :delivery_way,
+      :origin_of_delivery,
+      :shipment_days,
+      :price, :saler_id,
+      :buyer_id,
+        image_attributes:[:image])
   end
 
   # def move_to_signup
