@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
-  before action :move_to_signup, expcept: :index
+  # before action :move_to_signup, expcept: :index
 
   def index
   end
 
   def new
     @item = Item.new
-    @item.images.build
+    10.times{@item.images.build}
     @categories = Category.all
     @prefecture = Prefecture.all
   end
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :shipment_days_id,
       :buyer_id,
-      images_attributes: [:images])
+      images_attributes: {images:[]})
   end
 
   def move_to_signup
