@@ -17,6 +17,17 @@ class ItemsController < ApplicationController
       @grandchildren << child[0].children
     end
     @prefecture = Prefecture.all
+    @parents = Category.where("ancestry is null")
+    
+    @children = []
+    @parents.each do |parent|
+      @child = parent.children
+      @children << @child
+    end
+
+    @children.each do |child|
+      @
+
   end
 
   def create
