@@ -7,7 +7,15 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     10.times{@item.images.build}
-    @categories = Category.all
+    @children = []
+    @grandchildren = []
+    @parents = Category.where("ancestry is NULL")
+    @parents.each do |parent|
+      @children << parent.children
+    end
+    @children.each do |child|
+      @grandchildren << child[0].children
+    end
     @prefecture = Prefecture.all
   end
 
