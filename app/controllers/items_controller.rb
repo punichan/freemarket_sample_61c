@@ -6,28 +6,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    10.times{@item.images.build}
+    @item.images.build
     @children = []
     @grandchildren = []
     @parents = Category.where("ancestry is NULL")
+
     @parents.each do |parent|
       @children << parent.children
     end
+
     @children.each do |child|
       @grandchildren << child[0].children
     end
     @prefecture = Prefecture.all
-    @parents = Category.where("ancestry is null")
-    
-    @children = []
-    @parents.each do |parent|
-      @child = parent.children
-      @children << @child
-    end
-
-    @children.each do |child|
-      @
-
   end
 
   def create

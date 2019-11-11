@@ -46,8 +46,16 @@
     font-size: 16px; 
     letter-spacing: 1px; 
   }
-  .form-sell, #item_category_id{
-    width: 122%; 
+  .form-sell,
+  #item_category_id,
+  #item_clothes_size_id,
+  #item_condition_id,
+  #item_delivery_burden_id,
+  #item_delivery_way_id,
+  #item_prefecture_id,
+  #item_shipment_days_id
+  {
+    width: 100%; 
     height: 48px;
     margin-top: 5px;
     padding: 10px 16px 8px;
@@ -93,7 +101,7 @@
   display: flex;
   justify-content: space-around;
   position: relative;
-  height: 181px;
+  height: 500px;
   .sell-text{
     font-size: 14px;
     font-weight:bold; 
@@ -221,12 +229,10 @@ height: 227px;
   text-align: center;
   background-color: #EA352E;
   border: none;
-  margin: 60px auto 15px;
-  &__link{
-    display: block;
-    text-decoration: none; 
-    color: #fff;
-  }
+  margin: 30px auto 15px;
+  display: block;
+  text-decoration: none; 
+  color: #fff;
 }
 .btn-back{
   display: block;
@@ -236,7 +242,7 @@ height: 227px;
   text-align: center;
   background-color: #AAAAAA;
   border: none;
-  margin: 60px auto 15px;
+  margin: 30px auto 15px;
   &__link{
     display: block;
     text-decoration: none; 
@@ -244,3 +250,13 @@ height: 227px;
   }
 }
 
+@import "sign_up.scss";
+.myform-group{
+  @extend .form-group;
+  margin-top: 30px;
+}
+
+.mysell-delivery-flex{
+  @extend .sell-delivery-flex;
+  height: 420px;
+}
