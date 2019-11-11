@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index
 
   def index
+    @ladies_category = Item.where(category_id: 1)
+    # binding.pry
   end
 
   def new
