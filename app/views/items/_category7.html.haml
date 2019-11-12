@@ -1,0 +1,13 @@
+.items-box
+  %ul.item-box
+    - @syup_brand.each do |item|
+      %li.item
+        = link_to item_path(item.id), class: "item__link" do
+          %figure.item-title
+            .item-image
+              %span.item-image__price
+                = item.price
+              = image_tag item.images.first.images_url,class:"item-image__picture"
+            %figcaption.item-style
+              %span.item-style--font
+                = item.name

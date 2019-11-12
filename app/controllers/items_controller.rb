@@ -2,8 +2,14 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index
 
   def index
-    @ladies_category = Item.where(category_id: 1)
-    # binding.pry
+    @ladies_category = Item.where(category_id: 1).limit(10)
+    @mens_category = Item.where(category_id: 200).limit(10)
+    @books_category = Item.where(category_id: 623).limit(10)
+    @hobbies_category = Item.where(category_id: 682).limit(10)
+    @syane_brand = Item.where(brand_id: 2441).limit(10)
+    @ruivi_brand = Item.where(brand_id: 6143).limit(10)
+    @syup_brand = Item.where(brand_id: 2462).limit(10)
+    @nike_brand = Item.where(brand_id: 3803).limit(10)
   end
 
   def new

@@ -23,7 +23,6 @@ class SignupController < ApplicationController
     @user = User.new()
     session[:phone_number] = user_params[:phone_number]
     @user.addresses.build
-
   end
   
   def new4th
