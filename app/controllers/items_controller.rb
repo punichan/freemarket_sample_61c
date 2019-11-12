@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before action :move_to_signup, expcept: :index
+  # before action :move_to_signup, expcept: :index #仮はずし
 
   def index
     @ladies_category = Item.where(category_id: 1).limit(10)
@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.saler_id = current_user.id
-    # binding.pry
     if @item.save!
       redirect_to action: 'index'
     else
