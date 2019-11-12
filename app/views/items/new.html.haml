@@ -11,20 +11,13 @@
           %h3.upload-box__title 出品画像 
           %span.essential 必須
           %p.upload-box__text 最大10枚までアップロードできます
-          -# = form.fields_for :product_images do |image|
-          -#   .dropzone-container.clearfix
-          -#     .dropzone-area
-          -#       = image.label :image, class: "dropzone-box", for: "upload-image" do
-          -#         .input_area
-          -#           = image.file_field :image, multiple: true, id: "upload-image"
-          -#         %p ここをクリックしてください
-          = form.fields_for :images, multiple: true do |img|
+          = form.fields_for :images do |img|
             = img.label :images do
               .drop-box
                 .drop-box__content
                   %p.drop-box__text ドラッグアンドドロップ
                   %p.drop-box__text またはクリックしてファイルをアップロード
-            = img.file_field :images, multiple: true, class: "hidden"
+            = img.file_field :images, class: "hidden"
         .upload-box
           %h4.upload-box__title 商品名
           %span.essential 必須
