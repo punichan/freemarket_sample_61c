@@ -1,6 +1,6 @@
-- @ladies_category.each do |item|
-  .items-box
-    %ul.item-box
+.items-box
+  %ul.item-box
+    - @ladies_category.each do |item|
       %li.item
         = link_to item_path(item.id), class: "item__link" do
           %figure.item-title
