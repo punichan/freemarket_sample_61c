@@ -37,17 +37,22 @@
                 = form.collection_select :category_id, @parents, :id, :name, class: "form-sell"
                 = form.collection_select :category_id, @children[0], :id, :name, class: "form-sell"
                 = form.collection_select :category_id, @grandchildren[0], :id, :name, class: "form-sell"
-              .form-group
+              .myform-group
                 %h4.upload-box__title サイズ
                 %span.essential 必須
                 = form.collection_select :clothes_size_id, ClothesSize.all, :id, :name, class: "form-sell"
+              .space
+              .form-group
+                %h4.upload-box__title ブランド
+                %span.essential 必須
+                = form.text_field :brand_id, class: "form-sell"
               .space
               .form-group
                 %h4.upload-box__title 商品の状態
                 %span.essential 必須
                 = form.collection_select :condition_id, Condition.all, :id, :name, class: "form-sell"
         .upload-box
-          .sell-delivery-flex
+          .mysell-delivery-flex
             %h4.sell-text 配送について
             = link_to "#", class:"form-question" do
               = fa_icon "question-circle", class: "icon-question-circle"
@@ -96,7 +101,7 @@
             %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
             %p り処罰される可能性があります。
             %p また、出品をもちまして加盟店規約に同意したことになります。
-          = form.submit
+          = form.button "出品する", class: "btn-sell" 
           %button.btn-back
             = link_to "戻る", "#", class: "btn-back__link"
 = render "devise/registrations/footer"
