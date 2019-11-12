@@ -2,8 +2,7 @@
   %ul.item-box
     - @ladies_category.each do |item|
       = item.name
-      -# - binding.pry
-      = image_tag item.images[0].images_urls[0]
+      = image_tag item.images.first.images_url
     -# %li.item
     -#   = link_to "items/show", class: "item__link" do
     -#     %figure.item-title

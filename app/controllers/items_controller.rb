@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.saler_id = current_user.id
+    # binding.pry
     if @item.save!
       redirect_to action: 'index'
     else
@@ -40,7 +41,7 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :shipment_days_id,
       :buyer_id,
-      images_attributes: {images:[]})
+      images_attributes: [:images])
   end
 
   def move_to_signup
