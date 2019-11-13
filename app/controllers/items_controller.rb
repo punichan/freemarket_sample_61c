@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
     @item.save
     redirect_to root_path, notice: "支払いが完了しました"
   end
-
+  
   private
 
   def set_item
@@ -88,3 +88,4 @@ class ItemsController < ApplicationController
     redirect_to 'new_user_session_path' unless user_signed_in?
   end
 end
+

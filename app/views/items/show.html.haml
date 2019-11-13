@@ -1,66 +1,76 @@
 = render "main_header"
 .item-details-container
   .item-box
-    %h1.item-name Yamaha SG 600 1979年日本製 ハードケース付属mini様専用
+    %h1.item-name 
+      = @item.name
     .item-main-content
       .item-photo
         .item-photo-main
-          = image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_1.jpg?1565393280" , class:"item-photo-main__img"
+          = image_tag @item.images.first.images_url , class:"item-photo-main__img"
         .owl-dots
-          .owl-dot
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_2.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_4.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_5.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_6.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_7.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_10.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_8.jpg?1562892964", class:"owl-dot__img"
-          =image_tag"https://static.mercdn.net/item/detail/orig/photos/m43854755769_9.jpg?1562892964", class:"owl-dot__img"
+          - @item.images.each do |img|
+            .owl-dot
+              = image_tag img.images_url , class:"owl-dot__img"
       %table.item-detail-table
         %tbody.item-detail-table__body
           %tr
             %th 出品者
             %td 
-              =link_to "little.dan",class:"exhibitor"
-              = link_to "#" do
-                = fa_icon "grin", class: "icon_grin"
+              =link_to '#',class:"exhibitor" do
+                = @item.saler.nickname
           %tr
             %th カテゴリー
             %td 
-              =link_to"おもちゃ・ホビー・グッズ",class:"toys" 
+              =link_to"#",class:"toys" do
+                = @item.category.parent.parent.name
               %br
-              =link_to"＞楽器/器材",class:"musical instrument"            
+              =link_to"#",class:"musical instrument" do
+                >
+                = @item.category.parent.name
               %br
-              =link_to"＞エレキギター",class:"musical instrument"            
+              =link_to"#",class:"musical instrument" do
+                >
+                = @item.category.name
           %tr
             %th ブランド
             %td
-              =link_to "ヤマハ",class:"yamaha"
+              =link_to "#",class:"yamaha" do
+                = @item.brand.name
           %tr
             %th 商品の状態
-            %td やや傷や汚れあり
+            %td
+              = @item.condition.name
+
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td
+              = @item.delivery_burden.name
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td
+              = @item.delivery_way.name
           %tr
             %th 配送元地域
             %td 
-              =link_to "静岡",class:"shizuoka"
+              =link_to "#",class:"shizuoka" do
+                = @item.prefecture.name
           %tr
             %th 配送日の目安
-            %td 1~2日で発送
+            %td
+              = @item.shipment_days.name
     .item-price-box 
-      %span.item-price ¥49,000
+      %span.item-price
+        ¥
+        = @item.price.to_s(:delimited)
       %span.item-tax (税込) 
-      %span.item-postage 送料込み
+      %span.item-postage
+        = @item.delivery_burden.name2
     .item-buy-btn 
       = link_to buycheck_item_path do
         購入画面に進む
       
-    .item-description-inner mini様専用です。ギター：1979 Yamaha SG600  Tobacco Sunburst MIJ “LP Killer”1979年日本製フルオリジナルのYamaha SG600です。状態：清掃・調整済ですので安心して購入して下さい。 弦高1.5mm and 1.2mm@12F、フレット残こっています。トラスロッドは効かせてありますが、まだ回せます。小傷こそありますが綺麗な個体です。40年近くたったよく乾燥した木材は暖かいヴィンテージサウンドを奏でています。野太いハンバッカーサウンドを楽しんでください。重量：3.73kgオリジナルのハードケース付属、ポリッシュ、クロス付属。経年劣化による白濁があります。通常使用からの小傷・スクラッチありますが40年経ったギターにしては程度の良い美品になると思います。枯れた状態のヴィンテージギターです。 これを機会に昭和のあこがれのYamaha SG600 をぜひお求めください。 25枚の写真のリンクをブラウザーにコピペして下さい。どうぞご覧ください。 質問その他のお問い合わせ、大歓迎です。よろしくお願いいたします。写真のリンクflic.kr/s/aHsmF2Kfw3
+    .item-description-inner
+      = @item.item_description
     .item-button-container
       .item-button-container__left
         =link_to " ♡ いいね！", "#", class:"left-like" 
