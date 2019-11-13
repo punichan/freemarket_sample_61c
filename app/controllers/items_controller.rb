@@ -47,6 +47,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def destroy
+      @item = Item.find(params[:id])
+      if @item.saler_id == current_user.id && @item.destroy
+        redirect_to action: 'index'
+      else
+        redirect_to action: 'edit'
+      end
+    end
+
+    def exhibition
+    end
+    
   def purchase
     Payjp.api_key = 'sk_test_909ca763bed848e8c8361068'
     Payjp::Charge.create(
