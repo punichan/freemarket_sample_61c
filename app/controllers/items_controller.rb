@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item = Item.find(2)
   end
 
   def destroy

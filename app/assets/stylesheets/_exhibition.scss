@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   display: block;
-  font-size: 20px;
+  // font-size: 20px;
   font-family:游ゴシック体;
   font-weight: bold;
     &__top{
@@ -52,40 +52,47 @@
       line-height: 74px;
       font-weight: bold;
     }
-  }   
+  } 
+    .item_link{
+      text-decoration: none;
+      color: #000;
     .mypage-item{
-      height: 83px;
       width: 700px;
       padding: 16px;
       display: flex;
-      flex-direction: column;
-      border: solid 1px #eee;
-      &__text{
-        height: 21px;
-        width: 500px;
-        float: right;
-        p{
-          font-size: 15px;
+      position: relative;
+      border-bottom: solid 1px #eee;
+      &__right{
+        padding-left: 20px; 
+      .mypage-item__text{
+          font-size: 13px; 
+          margin-bottom: 18px;  
         }
+      .icon{
+        color: #ccc; 
+        font-size: 15px;
+        margin-right: 5px;  
       }
-      &__listing{
-        height: 30px;
-        width: 500px;
-      }
-      span{
-        height:18px;
-        width: 30px;
-        color: #eee;   
+      .num{
+        color: #888;
+        font-size: 17px;
+        margin-right: 5px;  
       }
       .exhib {
-        height: 22px;
-        width: 48px;
         background-color:#0099e8;
         color: #F5F5F5;
-        font-size: 15px;
-
+        padding: 5px;
+        border-radius: 5px;
+      }
+      }
+      .fa-angle-right{
+        font-size: 30px;
+        position: absolute;
+        top:25px;
+        right: 15px;
       }
     }
+  }
   }
   .mypage-history{
     margin: 40px 0 0;
