@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :saler, class_name: "User"
   belongs_to :category
-  belongs_to :brand
+  belongs_to :brand, optional: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :delivery_way
