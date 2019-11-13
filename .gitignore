@@ -29,5 +29,5 @@
 .env
 /vendor
 
-/public/uploads
+/public/uploads/*
 
