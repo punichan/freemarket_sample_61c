@@ -11,9 +11,9 @@ class ItemsController < ApplicationController
 
   def index
     @ladies_category = Item.where(category_id: 1..199).limit(10)
-    @mens_category = Item.where(category_id: 200).limit(10)
-    @books_category = Item.where(category_id: 623).limit(10)
-    @hobbies_category = Item.where(category_id: 682).limit(10)
+    @mens_category = Item.where(category_id: 200..345).limit(10)
+    @books_category = Item.where(category_id: 623..681).limit(10)
+    @hobbies_category = Item.where(category_id: 682..794).limit(10)
     @syane_brand = Item.where(brand_id: 2441).limit(10)
     @ruivi_brand = Item.where(brand_id: 6143).limit(10)
     @syup_brand = Item.where(brand_id: 2462).limit(10)
