@@ -14,7 +14,7 @@
         %span.item-pricebox__text 
           送料込み
 
-      = form_with method: :post, class: :purchase_way, local: true do |f|
+      = form_with url: purchase_items_path, method: :post, class: 'purchase_way', local: true do |f|
         .purchase_way__point
           .purchase_way__point--font
             ポイントはありません
@@ -23,7 +23,7 @@
             支払い金額
           .purchase_way__price__num
             ¥5,500
-        = f.submit "購入する", class:'purchase_way__btn'
+        %script.payjp-button{"data-key" => ENV["PAYJP_PUBLIC_KEY"], :src => "https://checkout.pay.jp", :type => "text/javascript"}
 
     .box-border
       .box-detail
