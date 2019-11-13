@@ -1,0 +1,29 @@
+= render "main_header"
+.container
+  = render "users/side_bar"
+  .mypage-container
+    .mypage-container__top 出品した商品
+    .mypage-tab-container__main
+    %ul.list-tab
+      %li.list-tab__now 出品中
+      %li.list-tab__yet　取引中
+      %li.list-tab__yet　売却済み
+    =link_to"item_path", class:'item_link' do
+      .mypage-item
+        =image_tag"https://i.pximg.net/img-master/img/2009/07/07/23/32/40/5049330_p0_master1200.jpg",width:"50",height:"50"
+        .mypage-item__right
+          .mypage-item__text yyyyy
+          .mypage-item__listing
+            %span.fa.fa-heart-o.icon
+            %span.num 0
+            %span.fa.fa-comment-o.icon
+            %span.num 0
+            %span.exhib 出品中 
+        %span.fa.fa-angle-right           
+  .history-content
+  %ul.mypage-history
+    %li.mypage-history-pager__left
+    %li.mypage-history-pager__right
+
+
+    
