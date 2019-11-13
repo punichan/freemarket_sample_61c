@@ -52,8 +52,11 @@ class ItemsController < ApplicationController
 
   def destroy
       @item = Item.find(params[:id])
-      @item.destroy if @item.saler_id == current_user.id 
-      redirect_to action: 'index'
+      if @item.saler_id == current_user.id && @item.destroy
+        redirect_to action: 'index'
+      else
+        redirect_to action: 'edit'
+      end
     end
 
     def exhibition
