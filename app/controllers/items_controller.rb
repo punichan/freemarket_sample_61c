@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(12)
+    @item = Item.find(30)
   end
 
   private
