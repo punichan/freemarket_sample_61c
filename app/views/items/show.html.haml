@@ -35,7 +35,9 @@
             %th ブランド
             %td
               =link_to "#",class:"yamaha" do
-                = @item.brand.name
+                -if @item.brand
+                  = @item.brand.name
+                
           %tr
             %th 商品の状態
             %td
