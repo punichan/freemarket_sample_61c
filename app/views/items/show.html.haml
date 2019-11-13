@@ -63,9 +63,12 @@
             %td
               = @item.shipment_days.name
     .item-price-box 
-      %span.item-price ¥49,000
+      %span.item-price
+        ¥
+        = @item.price
       %span.item-tax (税込) 
-      %span.item-postage 送料込み
+      %span.item-postage
+        = @item.delivery_burden.name2
     .item-buy-btn 
       = link_to buycheck_items_path do
         購入画面に進む
