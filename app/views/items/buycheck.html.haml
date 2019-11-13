@@ -15,7 +15,7 @@
         %span.item-pricebox__text 
           送料込み
 
-      = form_with url: purchase_items_path, method: :post, class: 'purchase_way', local: true do |f|
+      = form_with url: purchase_item_path, method: :post, class: 'purchase_way', local: true do |f|
         .purchase_way__point
           .purchase_way__point--font
             ポイントはありません

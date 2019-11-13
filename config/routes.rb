@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
   resources :items do
-    collection do
-      get 'buycheck/:id'=> 'items#buycheck', as: 'buycheck'
-      post 'purchase:id'=> 'items#purchase', as: 'purchase'
+    # collection do #collrectionでの書き方、仮消し
+    #   get 'buycheck/:id'=> 'items#buycheck', as: 'buycheck'
+    #   post 'purchase:id'=> 'items#purchase', as: 'purchase'
+    # end
+    member do
+      get 'buycheck'
+      post 'purchase'
     end
   end
   resources :users do
