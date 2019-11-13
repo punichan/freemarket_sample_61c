@@ -22,9 +22,11 @@
           %tr
             %th 出品者
             %td 
-              =link_to "little.dan",class:"exhibitor"
-              = link_to "#" do
-                = fa_icon "grin", class: "icon_grin"
+              =link_to '#',class:"exhibitor" do
+                = @item.saler.nickname
+              -# = link_to "#" do
+              -#   = fa_icon "grin", class: "icon_grin"
+                
           %tr
             %th カテゴリー
             %td 
