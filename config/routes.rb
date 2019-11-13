@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
   resources :items do
-    collection do
+    member do
       get 'buycheck'
       post 'purchase'
     end

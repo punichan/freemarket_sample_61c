@@ -24,11 +24,16 @@
           %tr
             %th カテゴリー
             %td 
-              =link_to"おもちゃ・ホビー・グッズ",class:"toys" 
+              =link_to"#",class:"toys" do
+                = @item.category.parent.parent.name
               %br
-              =link_to"＞楽器/器材",class:"musical instrument"            
+              =link_to"#",class:"musical instrument" do
+                >
+                = @item.category.parent.name
               %br
-              =link_to"＞エレキギター",class:"musical instrument"            
+              =link_to"#",class:"musical instrument" do
+                >
+                = @item.category.name
           %tr
             %th ブランド
             %td
@@ -59,12 +64,12 @@
     .item-price-box 
       %span.item-price
         ¥
-        = @item.price
+        = @item.price.to_s(:delimited)
       %span.item-tax (税込) 
       %span.item-postage
         = @item.delivery_burden.name2
     .item-buy-btn 
-      = link_to buycheck_items_path do
+      = link_to buycheck_item_path do
         購入画面に進む
       
     .item-description-inner
