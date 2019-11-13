@@ -52,6 +52,10 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
+  def show
+    @item = Item.find(12)
+  end
+
   private
   def item_params
     params.require(:item).permit(
@@ -76,3 +80,4 @@ class ItemsController < ApplicationController
     redirect_to 'new_user_session_path' unless user_signed_in?
   end
 end
+
