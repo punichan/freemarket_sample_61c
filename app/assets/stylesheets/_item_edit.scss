@@ -1,0 +1,186 @@
+.item-details-container{
+  width: 825px;  
+  margin: 40px auto ; 
+  padding:24px 40px 40px;  
+  .item-box{
+    height: 100%;
+    background-color:#fff;
+    padding: 24px 0 24px 0;
+    .item-name{
+      height: 60px;
+      width: 620px;
+      font-size: 24px;
+      padding: 8px;
+      line-height: 1.4;
+      font-family:  'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      margin: 0 auto;
+    }
+    .item-main-content{
+      height: 420px;
+      display: flex;
+      margin: 0;
+      .item-photo{ 
+        padding:24px 40px 40px;      
+        .item-photo-main{
+          height: 300px;
+          width: 300px;
+          &__img{
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .owl-dots{
+        height: 120px;
+        width: 300px;
+        line-height: 0;
+        display: inline-block;    
+        display: flex;
+        flex-wrap: wrap;    
+        .owl-dot{
+          &__img{
+            height: 60px;
+            width: 60px;
+          }  
+        }
+      }
+      .item-detail-table{
+        height: 400px;
+        width: 43%;
+        margin-top: 24px;
+        &__body{
+          width: 450px;
+        }
+        th{
+          border:1px solid rgb(245, 245, 245);
+          background-color: #F5F5F5;
+          width: 100px;
+          padding-left: 5px;
+        } 
+        td{
+          border:1px solid rgb(245, 245, 245); 
+          a{
+            color:#7da4cd;
+            text-decoration: none;
+            font-size: 14px;
+          }
+          .icon_grin{
+            height: 50px;
+            width: 50px;
+            color:palevioletred;
+            display: block;
+          }
+        }     
+      }
+    }
+    .item-price-box{
+      height: 50px;
+      width: 620px;
+      margin-top:50px;
+      text-align: center;
+      .item-price{
+        height: 60px;
+        width: 167px;
+        font-size: 50px;
+        font-weight: 900px;
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 40px;
+      }
+      .item-tax{
+        font-size: 10px;
+        padding:0 0 0 16px;
+      }
+      .item-postage{
+        font-size: 16px;
+      }
+    }
+    .line{
+      width: 825px;
+      height: 10px;
+      margin-top: 50px;
+      background-color: #f5f5f5;
+    }
+  .item-btn-container{
+    width: 745px;
+    height: 300px;
+    background-color: #fff;
+    .item-edit-btn{
+      display: block;
+      height: 60px;
+      width: 620px;
+      text-align: center;
+      line-height: 60px;
+      margin: 10px auto 30px;
+      background-color:#EA352A;
+      font-weight: bold;
+      font-size: 15px;
+      color: #FFFF;
+      text-decoration: none;
+    }
+    .item-exhibit-btn{
+      display: block;
+      height: 60px;
+      width: 620px;
+      text-align: center;
+      line-height: 60px;
+      margin: 30px auto;
+      background-color: #aaa;
+      font-weight: bold;
+      font-size: 15px;
+      color: #FFFF;
+      text-decoration: none;
+    }
+    .item-delete-btn{
+      display: block;
+      height: 60px;
+      width: 620px;
+      margin-top: 16px;
+      text-align: center;
+      line-height: 60px;
+      margin: 30px auto;
+      background-color: #aaa;
+      font-weight: bold;
+      font-size: 15px;
+      color: #FFFF;
+      text-decoration: none;
+    }
+    .text{
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
+  .comment-content{
+    display: flex;
+    width: 745px;
+    height: 300px;
+    background-color: #fff;
+    .comment-content-top{
+      display: block;
+      height:50px;
+      width: 650px;
+      font-size: 16px;
+      margin: 10px auto;
+      padding: 15px;
+      text-align: center;
+      background-color: #fff6DE;
+    }
+    .comment_form{
+      margin: 0 auto;
+      height: 105px;
+      width: 650px;
+      margin-top: 30px;
+      border: 1px solid;
+    }
+    .comment-content-btn{
+      height: 50px;
+      width: 650px;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+      background-color: #aaa;
+    } 
+  }     
+}

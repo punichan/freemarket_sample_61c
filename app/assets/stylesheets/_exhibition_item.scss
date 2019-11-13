@@ -1,0 +1,37 @@
+.mypage-content{
+  width: 700px;
+  height: 466px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  .mypage-tab-container{
+    padding: 0 16px;
+    
+    .mypage-tab-head{
+      height: 72px;
+      width: 700px;
+      // line-height: 72px;
+      margin: 0 auto;
+      background-color: aquamarine;
+    }
+  }
+    .tab-content{
+      display: inline-block;
+      height: 72px;
+      width: 700px;
+      color: #333333;
+      font:16px;
+      background-color: coral;
+      .tab{
+        height: 72px;
+        width: 233px;
+        padding: 16px;background-color: gold;
+    
+      }
+    }
+    .mypage-item-not{
+      height: 240px;
+      width: 700px;
+      padding: 160px 0 60px;
+    
+    }
+}

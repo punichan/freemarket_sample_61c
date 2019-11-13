@@ -21,6 +21,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    # @item = Item.find(2)
+  end
+
+  def destroy
+      @item = Item.find(params[:id])
+      @item.destroy if @item.saler_id == current_user.id 
+      redirect_to action: 'index'
+    end
+
+    def exhibition_item
+    end
+    
   private
   def item_params
     params.require(:item).permit(
