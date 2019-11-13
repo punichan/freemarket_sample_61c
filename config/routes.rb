@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  root to: 'items#new'
+  root to: 'items#index'
   resources :items do
     collection do
       get 'buycheck'
