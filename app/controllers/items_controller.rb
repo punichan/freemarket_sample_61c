@@ -58,11 +58,7 @@ class ItemsController < ApplicationController
     @item.save
     redirect_to root_path, notice: "支払いが完了しました"
   end
-
-  def show
-    @item = Item.find(params[:id])
-  end
-
+  
   private
 
   def set_item
