@@ -30,8 +30,8 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @item = Item.find(1)
-    Payjp.api_key = 'sk_test_909ca763bed848e8c8361068'
+    @item = Item.find(3)
+    Payjp.api_key = PAYJP_SECRET_KEY
     Payjp::Charge.create(
       amount: 3000,
       card: params['payjp-token'],
