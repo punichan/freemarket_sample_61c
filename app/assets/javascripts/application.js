@@ -15,4 +15,6 @@
 //= require activestorage
 //= require turbolinks
 //= require dropzone
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
