@@ -29,6 +29,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def purchase
+    @item = Item.find(1)
+    Payjp.api_key = 'sk_test_909ca763bed848e8c8361068'
+    Payjp::Charge.create(
+      amount: 3000,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    @item.buyer_id = current_user.id
+    @item.save
+    redirect_to root_path, notice: "支払いが完了しました"
+  end
+
   private
   def item_params
     params.require(:item).permit(

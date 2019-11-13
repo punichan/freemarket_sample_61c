@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'buycheck'
+      post 'purchase'
     end
   end
   resources :users do
