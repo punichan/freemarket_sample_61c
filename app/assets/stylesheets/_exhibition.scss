@@ -1,10 +1,12 @@
 .container{
   width: 1020px;
   margin: 40px auto;
+  background-color: #F5F5F5;
+  display: flex;
   .mypage-container{
   width: 700px;
   height: 466px;
-  float: right;
+  background: #fff;
   border-width: 0;
   margin: 0;
   padding: 0;
@@ -12,36 +14,92 @@
   font-size: 20px;
   font-family:游ゴシック体;
   font-weight: bold;
-  background-color: antiquewhite;
     &__top{
       height: 72px;
       width: 700px;
       padding: 0 16px;
-      background-color: #FAFAFA;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: bold;
     }
     &__main{
       width: 700px;
     }
-    .list-tabs{
-      height: 83px;
-      width: 700px;
-      display: flex;
-      .list-tab{
-        height: 74px;
-        width: 233px;
-        background-color: azure;
-      }
+  .list-tab{
+    background: #eee;
+    height: 74px;
+    display: flex;
+    &__now{
+      background: #fff;
+      width: 33%;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      font-size:16px;
+      line-height: 74px;
+      border-top: 2px solid #ea352d;
+      font-weight: bold;
+      height: 74px;
+      width: 233px;
     }
-    .mypage-tab{
+    &__yet{
+      width: 33%;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      font-size:16px;
+      line-height: 74px;
+      font-weight: bold;
+    }
+  }   
+    .mypage-item{
       height: 83px;
       width: 700px;
       padding: 16px;
-      background-color: goldenrod;
-    }
-    .mypage-history{
-      height: 44px;
-      width: 700px;
-      background-color: aquamarine;
+      display: flex;
+      flex-direction: column;
+      border: solid 1px #eee;
+      &__text{
+        height: 21px;
+        width: 500px;
+        float: right;
+        p{
+          font-size: 15px;
+        }
+      }
+      &__listing{
+        height: 30px;
+        width: 500px;
+      }
+      span{
+        height:18px;
+        width: 30px;
+        color: #eee;   
+      }
+      .exhib {
+        height: 22px;
+        width: 48px;
+        background-color:#0099e8;
+        color: #F5F5F5;
+        font-size: 15px;
+
+      }
     }
   }
+  .mypage-history{
+    margin: 40px 0 0;
+    &__right{
+      height: 44px;
+      width: 44px;
+      background-color:red;
+    }
+    &__left{
+      height: 44px;
+      width: 44px;
+      background-color:blue;
+    }
+  }  
+  
 }
+

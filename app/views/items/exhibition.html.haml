@@ -1,15 +1,25 @@
 = render "main_header"
 .container
+  = render "users/side_bar"
   .mypage-container
-    %h2.mypage-container__top 出品した商品
+    .mypage-container__top 出品した商品
     .mypage-tab-container__main
-    %ul.list-tabs
-      %li.list-tab
-    .mypage-tab-container__main
-    %ul.mypage-tabs
-      %li.mypage-tab
-    %ul.mypage-history
+    %ul.list-tab
+      %li.list-tab__now 出品中
+      %li.list-tab__yet　取引中
+      %li.list-tab__yet　売却済み
+    %ul.mypage-item
+      %li.mypage-item__text
+        %p.name yyyyy
+      %li.mypage-item__listing
+        %span.fa.fa-heart-o 
+        %span.fa.fa-comment-o 
+        %span.exhib 出品中
 
-  
-  
+  .history-content
+  %ul.mypage-history
+    %li.mypage-history-pager__left
+    %li.mypage-history-pager__right
 
+
+    
