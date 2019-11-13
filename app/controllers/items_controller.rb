@@ -1,8 +1,16 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
+  before_action :set_item, only: [:show, :purchase, :buycheck]
+  def show
+  end
+
+  def buycheck
+  end
+
+
 
   def index
-    @ladies_category = Item.where(category_id: 1).limit(10)
+    @ladies_category = Item.where(category_id: 1..199).limit(10)
     @mens_category = Item.where(category_id: 200).limit(10)
     @books_category = Item.where(category_id: 623).limit(10)
     @hobbies_category = Item.where(category_id: 682).limit(10)
@@ -40,7 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @item = Item.find(2)
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: 3000,
@@ -57,6 +64,11 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name,
