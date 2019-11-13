@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     collection do
-      get 'buycheck'
-      post 'purchase'
+      get 'buycheck/:id'=> 'items#buycheck', as: 'buycheck'
+      post 'purchase:id'=> 'items#purchase', as: 'purchase'
     end
   end
   resources :users do
