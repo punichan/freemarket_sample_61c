@@ -1,13 +1,39 @@
 class ItemsController < ApplicationController
-  # before action :move_to_signup, expcept: :index
+  # before action :move_to_signup, expcept: :index #仮はずし
+  before_action :set_item, only: [:show, :purchase, :buycheck]
+  def show
+  end
+
+  def buycheck
+  end
+
+
 
   def index
+    @ladies_category = Item.where(category_id: 1..199).limit(10)
+    @mens_category = Item.where(category_id: 200).limit(10)
+    @books_category = Item.where(category_id: 623).limit(10)
+    @hobbies_category = Item.where(category_id: 682).limit(10)
+    @syane_brand = Item.where(brand_id: 2441).limit(10)
+    @ruivi_brand = Item.where(brand_id: 6143).limit(10)
+    @syup_brand = Item.where(brand_id: 2462).limit(10)
+    @nike_brand = Item.where(brand_id: 3803).limit(10)
   end
 
   def new
     @item = Item.new
     10.times{@item.images.build}
-    @categories = Category.all
+    @children = []
+    @grandchildren = []
+    @parents = Category.where("ancestry is NULL")
+
+    @parents.each do |parent|
+      @children << parent.children
+    end
+
+    @children.each do |child|
+      @grandchildren << child[0].children
+    end
     @prefecture = Prefecture.all
   end
 
@@ -33,7 +59,24 @@ class ItemsController < ApplicationController
     def exhibition
     end
     
+  def purchase
+    Payjp.api_key = 'sk_test_909ca763bed848e8c8361068'
+    Payjp::Charge.create(
+      amount: 3000,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    @item.buyer_id = current_user.id
+    @item.save
+    redirect_to root_path, notice: "支払いが完了しました"
+  end
+  
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name,
@@ -50,10 +93,11 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :shipment_days_id,
       :buyer_id,
-      images_attributes: {images:[]})
+      images_attributes: [:images])
   end
 
   def move_to_signup
     redirect_to 'new_user_session_path' unless user_signed_in?
   end
 end
+
