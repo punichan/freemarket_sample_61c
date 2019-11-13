@@ -38,7 +38,8 @@
           %tr
             %th ブランド
             %td
-              =link_to "ヤマハ",class:"yamaha"
+              =link_to "#",class:"yamaha" do
+                = @item.brand.name
           %tr
             %th 商品の状態
             %td やや傷や汚れあり
