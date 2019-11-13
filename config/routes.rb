@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'buycheck'
       get 'edit'
-      get 'exhibition_item'
+      get 'exhibition'
     end
   end
   resources :users do

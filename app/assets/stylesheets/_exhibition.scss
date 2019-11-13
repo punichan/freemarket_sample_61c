@@ -1,0 +1,47 @@
+.container{
+  width: 1020px;
+  margin: 40px auto;
+  .mypage-container{
+  width: 700px;
+  height: 466px;
+  float: right;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 20px;
+  font-family:游ゴシック体;
+  font-weight: bold;
+  background-color: antiquewhite;
+    &__top{
+      height: 72px;
+      width: 700px;
+      padding: 0 16px;
+      background-color: #FAFAFA;
+    }
+    &__main{
+      width: 700px;
+    }
+    .list-tabs{
+      height: 83px;
+      width: 700px;
+      display: flex;
+      .list-tab{
+        height: 74px;
+        width: 233px;
+        background-color: azure;
+      }
+    }
+    .mypage-tab{
+      height: 83px;
+      width: 700px;
+      padding: 16px;
+      background-color: goldenrod;
+    }
+    .mypage-history{
+      height: 44px;
+      width: 700px;
+      background-color: aquamarine;
+    }
+  }
+}
