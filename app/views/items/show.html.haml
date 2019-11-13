@@ -47,10 +47,12 @@
 
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td
+              = @item.delivery_burden.name
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td
+              = @item.delivery_way.name
           %tr
             %th 配送元地域
             %td 
