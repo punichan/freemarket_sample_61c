@@ -56,7 +56,9 @@
           %tr
             %th 配送元地域
             %td 
-              =link_to "静岡",class:"shizuoka"
+              =link_to "#",class:"shizuoka" do
+                = @item.prefecture.name
+
           %tr
             %th 配送日の目安
             %td 1~2日で発送
