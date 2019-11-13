@@ -57,10 +57,10 @@ class ItemsController < ApplicationController
       else
         redirect_to action: 'edit'
       end
-    end
+  end
 
-    def exhibition
-    end
+  def exhibition
+  end
     
   def purchase
     Payjp.api_key = 'sk_test_909ca763bed848e8c8361068'

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     member do
       get 'buycheck'
       get 'edit'
-      get 'exhibition'
+      # get 'exhibition'
       post 'purchase'
     end
   end
