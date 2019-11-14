@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       get 'card_edit'
       get 'mypage_edit'
       get 'identification'
+    end
+    member do
       get 'exhibition'
     end
   end
