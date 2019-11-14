@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
-  before_action :set_item, only: [:show, :purchase, :buycheck, :edit, :update]
+  before_action :set_item, only: [:show, :purchase, :buycheck,:details, :edit, :update]
   def show
   end
 
