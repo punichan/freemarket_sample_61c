@@ -1,5 +1,5 @@
 .user-header
-  = link_to "#" do
+  = link_to root_path do
     = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "user-header__img"
 .main
   .user-container
@@ -101,7 +101,7 @@
             %p また、出品をもちまして加盟店規約に同意したことになります。
           = form.submit "出品する", class:"btn-sell" 
           %button.btn-back
-            = link_to "戻る", "#", class: "btn-back__link"
+            = link_to "戻る",root_path, class: "btn-back__link"
 = render "devise/registrations/footer"
 
 

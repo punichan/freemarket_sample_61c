@@ -24,14 +24,20 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    10.times{@item.images.build}
-    @parents = Category.where("ancestry is NULL")
 
-    @children =  @parents.map {|parent| parent.children}
+    if user_signed_in?
+      @item = Item.new
+      10.times{@item.images.build}
+      @parents = Category.where("ancestry is NULL")
 
-    @grandchildren = @children.map { |child| child[0].children }
-    @prefecture = Prefecture.all
+      @children =  @parents.map {|parent| parent.children}
+
+      @grandchildren = @children.map { |child| child[0].children }
+      @prefecture = Prefecture.all
+    else
+      redirect_to new_user_registration_path
+    end
+
   end
 
   def create
