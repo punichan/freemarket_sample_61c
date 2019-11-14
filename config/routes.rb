@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get 'buycheck'
-      get 'edit'
-      # get 'exhibition'
+      get 'details'
       post 'purchase'
     end
   end
@@ -18,6 +17,9 @@ Rails.application.routes.draw do
       get 'card_edit'
       get 'mypage_edit'
       get 'identification'
+    end
+    member do
+      get 'exhibition'
     end
   end
   resources :signup do
