@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
   def buycheck
   end
 
+  def details
+  end
+
 
 
   def index
