@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
-  before_action :set_item, only: [:show, :purchase, :buycheck]
+  before_action :set_item, only: [:show, :purchase, :buycheck, :edit, :update]
   def show
   end
 
@@ -48,6 +48,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    10.times{@item.images.build}
+    @children = []
+    @grandchildren = []
+    @parents = Category.where("ancestry is NULL")
+
+    @parents.each do |parent|
+      @children << parent.children
+    end
+
+    @children.each do |child|
+      @grandchildren << child[0].children
+    end
+    @prefecture = Prefecture.all
+  end
+
+  def update
+    @item.update(item_params) if @item.saler_id == current_user.id
   end
 
   def destroy
