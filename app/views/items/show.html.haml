@@ -7,7 +7,8 @@
       .item-photo
         .item-photo-main
           = image_tag @item.images.first.images_url , class:"item-photo-main__img"
-          .soldout sold
+          -if @item.buyer_id
+            .soldout sold
         .owl-dots
           - @item.images.each do |img|
             .owl-dot
