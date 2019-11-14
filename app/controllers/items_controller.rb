@@ -26,17 +26,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     10.times{@item.images.build}
-    @children = []
-    @grandchildren = []
     @parents = Category.where("ancestry is NULL")
 
-    @parents.each do |parent|
-      @children << parent.children
-    end
+    @children =  @parents.map {|parent| parent.children}
 
-    @children.each do |child|
-      @grandchildren << child[0].children
-    end
+    @grandchildren = @children.map { |child| child[0].children }
     @prefecture = Prefecture.all
   end
 
@@ -52,17 +46,10 @@ class ItemsController < ApplicationController
 
   def edit
     10.times{@item.images.build}
-    @children = []
-    @grandchildren = []
     @parents = Category.where("ancestry is NULL")
+    @children =  @parents.map {|parent| parent.children}
 
-    @parents.each do |parent|
-      @children << parent.children
-    end
-
-    @children.each do |child|
-      @grandchildren << child[0].children
-    end
+    @grandchildren = @children.map { |child| child[0].children }
     @prefecture = Prefecture.all
   end
 

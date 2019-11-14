@@ -9,7 +9,7 @@
       %li.list-tab__yet 取引中
       %li.list-tab__yet 売却済み
     - @items.each do |item|
-      =link_to "/items/#{item.id}/details", class:'item_link' do
+      =link_to details_item_path(item.id) , class:'item_link' do
         .mypage-item
           =image_tag item.images.first.images_url ,width:"50",height:"50"
           .mypage-item__right
