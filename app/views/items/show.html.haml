@@ -7,6 +7,7 @@
       .item-photo
         .item-photo-main
           = image_tag @item.images.first.images_url , class:"item-photo-main__img"
+          .soldout sold
         .owl-dots
           - @item.images.each do |img|
             .owl-dot
@@ -68,8 +69,12 @@
       %span.item-postage
         = @item.delivery_burden.name2
     .item-buy-btn 
-      = link_to buycheck_item_path do
-        購入画面に進む
+      -if @item.buyer_id
+        .urikire
+          売り切れました
+      -else
+        = link_to buycheck_item_path do
+          購入画面に進む
       
     .item-description-inner
       = @item.item_description
@@ -115,7 +120,12 @@
             %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
             =form_with model: @comment,local:true do |form|
               =form.text_area :text,class:"comment_form"
-      .comment-content-btn コメントする
+      .comment-content-btn 
+        -if @item.buyer_id
+          売り切れのためコメントできません
+        -else
+          コメントする
+          
   .nav-item-link
     .nav-item-link-left
       =link_to"ザラ ワンピース ドット柄 プリーツ zara","#",class:"nav-left"

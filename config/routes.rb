@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'exhibition'
+      get 'selled'
     end
   end
   resources :signup do

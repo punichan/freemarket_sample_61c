@@ -6,4 +6,8 @@ class UsersController < ApplicationController
     @items = Item.where(saler_id: current_user.id)
   end
 
+  def selled
+    @items = Item.where(saler_id: current_user.id)
+  end
+
 end
