@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params) if @item.saler_id == current_user.id
+    @item.update(update_item_params) if @item.saler_id == current_user.id
   end
 
   def destroy
@@ -117,6 +117,24 @@ class ItemsController < ApplicationController
       :shipment_days_id,
       :buyer_id,
       images_attributes: [:images])
+  end
+  def update_item_params
+    params.require(:item).permit(
+      :name,
+      :item_description,
+      :price,
+      :brand_id,
+      :saler_id,
+      :category_id,
+      :shoes_size_id,
+      :clothes_size_id,
+      :condition_id, 
+      :delivery_way_id,
+      :delivery_burden_id,
+      :prefecture_id,
+      :shipment_days_id,
+      :buyer_id,
+      images_attributes: [:images, :_destroy, :id])
   end
 
   def move_to_signup
