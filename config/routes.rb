@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     member do
       get 'buycheck'
       get 'edit'
-      # get 'exhibition'
       post 'purchase'
     end
   end
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
       get 'card_edit'
       get 'mypage_edit'
       get 'identification'
+      get 'exhibition'
     end
   end
   resources :signup do
