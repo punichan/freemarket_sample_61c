@@ -1,5 +1,5 @@
 .user-header
-  = link_to "/", class: "user-header__img" do
+  = link_to root_path, class: "user-header__img" do
     = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "header__img"
   %nav.progress
     %ul.progress-bar
@@ -32,6 +32,6 @@
           %p ありがとうございます。
           %p 会員登録が完了しました。
         %button.registration-form__content__btn
-          = link_to "メルカリをはじめる", "#"
+          = link_to "メルカリをはじめる", root_path
         = image_tag "mercari.png", size: "400x400", class: "mercari-img"
 = render "devise/registrations/footer"

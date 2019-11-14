@@ -21,20 +21,24 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    10.times{@item.images.build}
-    @children = []
-    @grandchildren = []
-    @parents = Category.where("ancestry is NULL")
+    if user_signed_in?
+      @item = Item.new
+      10.times{@item.images.build}
+      @children = []
+      @grandchildren = []
+      @parents = Category.where("ancestry is NULL")
 
-    @parents.each do |parent|
-      @children << parent.children
-    end
+      @parents.each do |parent|
+        @children << parent.children
+      end
 
-    @children.each do |child|
-      @grandchildren << child[0].children
+      @children.each do |child|
+        @grandchildren << child[0].children
+      end
+      @prefecture = Prefecture.all
+    else
+      redirect_to new_user_registration_path
     end
-    @prefecture = Prefecture.all
   end
 
   def create
