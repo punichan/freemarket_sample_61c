@@ -84,8 +84,7 @@
           .form-group
             %p「次へ進む」のボタンを押すことにより、利用規約に
             %p 同意したものとみなします
-          %button.registration-form__content__btn
-            = form.submit "次へ進む"
+          = form.submit "次へ進む",class:"registration-form__content__btn"
           = link_to "#", class:"explanation-info" do
             本人情報の登録について
             = fa_icon "chevron-right", class: "icon-chevron-right"

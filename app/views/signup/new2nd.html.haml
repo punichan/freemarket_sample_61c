@@ -35,8 +35,7 @@
           .form-group
             %p 本人確認のため、携帯電話のSMS(ショートメッセ
             %p ージサービス)を利用して認証を行います。
-          %button.registration-form__content__btn
-            = form.submit "SMSを送信する"
+          = form.submit "SMSを送信する",class: "registration-form__content__btn"
           .form-text-info
             %p ※ 電話番号は本人確認や不正利用防止のために利用
             %p します。他のユーザーに公開されることはありま
