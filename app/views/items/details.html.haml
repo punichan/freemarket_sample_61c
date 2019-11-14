@@ -1,0 +1,86 @@
+= render "main_header"
+.item-details-container
+  .item-box
+    %h1.item-name 
+      = @item.name
+    .item-main-content
+      .item-photo
+        .item-photo-main
+          = image_tag @item.images.first.images_url , class:"item-photo-main__img"
+        .owl-dots
+          - @item.images.each do |img|
+            .owl-dot
+              =image_tag img.images_url, class:"owl-dot__img"
+      %table.item-detail-table
+        %tbody.item-detail-table__body
+          %tr
+            %th 出品者
+            %td 
+              =link_to @item.saler.nickname,class:"exhibitor"
+              -# = link_to "#" do
+              -#   = fa_icon "grin", class: "icon_grin"
+          %tr
+            %th カテゴリー
+            %td 
+              =link_to "#",class:"musical instrument" do
+                >
+                = @item.category.parent.parent.name              
+              %br
+              =link_to "#",class:"musical instrument" do
+                >
+                = @item.category.parent.name              
+              %br
+              =link_to "#",class:"musical instrument" do
+                >
+                = @item.category.name            
+          %tr
+            %th ブランド
+            %td
+              =link_to "ヤマハ",class:"yamaha" do
+                - if @item.brand
+                  = @item.brand.name
+          %tr
+            %th 商品の状態
+            %td 
+              = @item.condition.name
+          %tr
+            %th 配送料の負担
+            %td 
+              = @item.delivery_burden.name
+          %tr
+            %th 配送の方法
+            %td 
+              = @item.delivery_way.name
+          %tr
+            %th 配送元地域
+            %td 
+              =link_to "#",class:"shizuoka" do
+                =@item.prefecture.name
+          %tr
+            %th 配送日の目安
+            %td 
+              =@item.shipment_days.name
+    .item-price-box 
+      %span.item-price
+        ¥
+        = @item.price.to_s(:delimited)
+      %span.item-tax (税込)
+      %span.item-postage 
+        = @item.delivery_burden.name2
+    %p.line
+    .item-btn-container
+      = link_to edit_item_path , class:'item-edit-btn' do
+        商品の編集
+      %p.text or
+      = link_to "#", class:'item-exhibit-btn' do
+        出品を一旦停止      
+      = link_to "/items/#{@item.id}", method: :delete, class:'item-delete-btn' do
+        この商品を削除する
+    %p.line
+  .comment-content
+    .comment-content-top
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      =form_with model: @comment,local:true do |form|
+        =form.text_area :text,class:"comment_form"
+      .comment-content-btn コメントする 
+= render'main_footer'

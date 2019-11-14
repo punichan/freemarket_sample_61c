@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
-  before_action :set_item, only: [:show, :purchase, :buycheck]
+  before_action :set_item, only: [:show, :purchase, :buycheck,:details, :edit, :update]
   def show
   end
 
   def buycheck
+  end
+
+  def details
   end
 
 
@@ -23,17 +26,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     10.times{@item.images.build}
-    @children = []
-    @grandchildren = []
     @parents = Category.where("ancestry is NULL")
 
-    @parents.each do |parent|
-      @children << parent.children
-    end
+    @children =  @parents.map {|parent| parent.children}
 
-    @children.each do |child|
-      @grandchildren << child[0].children
-    end
+    @grandchildren = @children.map { |child| child[0].children }
     @prefecture = Prefecture.all
   end
 
@@ -48,6 +45,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    10.times{@item.images.build}
+    @parents = Category.where("ancestry is NULL")
+    @children =  @parents.map {|parent| parent.children}
+
+    @grandchildren = @children.map { |child| child[0].children }
+    @prefecture = Prefecture.all
+  end
+
+  def update
+    @item.update(update_item_params) if @item.saler_id == current_user.id
   end
 
   def destroy
@@ -97,6 +104,24 @@ class ItemsController < ApplicationController
       :shipment_days_id,
       :buyer_id,
       images_attributes: [:images])
+  end
+  def update_item_params
+    params.require(:item).permit(
+      :name,
+      :item_description,
+      :price,
+      :brand_id,
+      :saler_id,
+      :category_id,
+      :shoes_size_id,
+      :clothes_size_id,
+      :condition_id, 
+      :delivery_way_id,
+      :delivery_burden_id,
+      :prefecture_id,
+      :shipment_days_id,
+      :buyer_id,
+      images_attributes: [:images, :_destroy, :id])
   end
 
   def move_to_signup
