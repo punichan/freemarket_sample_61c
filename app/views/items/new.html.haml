@@ -12,12 +12,9 @@
           %span.essential 必須
           %p.upload-box__text 最大10枚までアップロードできます
           = form.fields_for :images, @item.images.build do |img|
-            = img.label :images do
-              .drop-box
-                .drop-box__content
-                  %p.drop-box__text ドラッグアンドドロップ
-                  %p.drop-box__text またはクリックしてファイルをアップロード
-              = img.file_field :images, multiple: true
+            %form#my-awesome-dropzone.dropzone{:action => "/file-upload"}
+              %p.drop-box__text ドラッグアンドドロップ
+              %p.drop-box__text またはクリックしてファイルをアップロード
         .upload-box
           %h4.upload-box__title 商品名
           %span.essential 必須

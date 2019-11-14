@@ -110,7 +110,7 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :shipment_days_id,
       :buyer_id,
-      images_attributes: [:images])
+      images_attributes: [:images, :item_id, :created_at, :updated_at])
   end
   def update_item_params
     params.require(:item).permit(
