@@ -1,0 +1,105 @@
+.user-header
+  = link_to "#" do
+    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", class: "user-header__img"
+.main
+  .user-container
+    .registration-head
+      %h2.registration-head__title 商品の情報を入力
+    .registration-form
+      = form_with model: @item, local: true do |form|
+        .upload-box
+          %h3.upload-box__title 出品画像 
+          %span.essential 必須
+          %p.upload-box__text 最大10枚までアップロードできます
+          = form.fields_for :images do |img|
+            = img.label :images do
+              .drop-box
+                .drop-box__content
+                  %p.drop-box__text ドラッグアンドドロップ
+                  %p.drop-box__text またはクリックしてファイルをアップロード
+            = img.file_field :images, class: "hidden"
+        .upload-box
+          %h4.upload-box__title 商品名
+          %span.essential 必須
+          = form.text_field :name, autofocus: true, placeholder: "商品名（必須40文字まで）", class: "form-default"
+          .space
+          .form-group
+            %h4.upload-box__title 商品の説明
+            %span.essential 必須
+            = form.text_area :item_description, placeholder: "商品の説明（必須1,000文字以内）", class: "text-area-default"
+        .upload-box
+          .sell-flex
+            %h4.sell-text 商品の詳細
+            .sell-box
+              .form-group
+                %h4.upload-box__title カテゴリー
+                %span.essential 必須
+                = form.collection_select :category_id, @parents, :id, :name, class: "form-sell"
+                = form.collection_select :category_id, @children[0], :id, :name, class: "form-sell"
+                = form.collection_select :category_id, @grandchildren[0], :id, :name, class: "form-sell"
+              .myform-group
+                %h4.upload-box__title サイズ
+                %span.essential 必須
+                = form.collection_select :clothes_size_id, ClothesSize.all, :id, :name, class: "form-sell"
+              .myform-group
+                %h4.upload-box__title ブランド
+                = form.text_field :brand_id, class: "form-sell"
+              .space
+              .form-group
+                %h4.upload-box__title 商品の状態
+                %span.essential 必須
+                = form.collection_select :condition_id, Condition.all, :id, :name, class: "form-sell"
+        .myupload-box
+          .sell-delivery-flex
+            %h4.sell-text 配送について
+            = link_to "#", class:"form-question" do
+              = fa_icon "question-circle", class: "icon-question-circle"
+            .sell-box
+              .form-group
+                %h4.upload-box__title 配送量の負担
+                %span.essential 必須
+                = form.collection_select :delivery_burden_id, DeliveryBurden.all, :id, :name, class: "form-sell"
+              .space
+              .form-group
+                %h4.upload-box__title 配送方法
+                %span.essential 必須
+                = form.collection_select :delivery_way_id, DeliveryWay.all, :id, :name, class: "form-sell"
+              .space
+              .form-group
+                %h4.upload-box__title 発送元の地域
+                %span.essential 必須
+                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "form-sell"
+              .space
+              .form-group
+                %h4.upload-box__title 発送までの日数
+                %span.essential 必須
+                = form.collection_select :shipment_days_id, ShipmentDays.all, :id, :name, class: "form-sell"
+        .upload-box
+          .sell-price-flex
+            %h4.sell-text 販売価格(300〜9,999,999)
+            = link_to "#", class:"form-question-2" do
+              = fa_icon "question-circle", class: "icon-question-circle"
+            .sell-box
+              .price
+                .price__left
+                  %h4.price__title 価格
+                  %span.essential 必須
+                .price__right
+                  %span.yen ¥
+                  = form.text_field :price, class: "form-price", placeholder:"例）300"
+              .fee
+                .fee__left 販売手数料（10%）
+                .fee__right -
+              .profit
+                .profit__left 販売利益
+                .profit__right -
+        .sell-content
+          .sell-text
+            %p 禁止されている出品、行為を必ずご確認ください。
+            %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
+            %p り処罰される可能性があります。
+            %p また、出品をもちまして加盟店規約に同意したことになります。
+          = form.submit "変更する", class:"btn-sell" 
+          %button.btn-back
+            = link_to "キャンセル", "#", class: "btn-back__link"
+= render "devise/registrations/footer"
