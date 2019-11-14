@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(update_item_params) if @item.saler_id == current_user.id
+    redirect_to details_item_path
   end
 
   def destroy
