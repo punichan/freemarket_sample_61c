@@ -9,5 +9,5 @@ class UsersController < ApplicationController
   def selled
     @items = Item.where(saler_id: current_user.id)
   end
-
+  
 end
