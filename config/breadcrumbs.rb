@@ -26,6 +26,16 @@ crumb :logout do
   parent :users
 end
 
+crumb :exhibition do
+  link "出品中", exhibition_user_path
+  parent :users
+end
+
+crumb :selled do
+  link "売却済み", selled_user_path
+  parent :users
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
