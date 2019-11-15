@@ -2,12 +2,18 @@ class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
   before_action :set_item, only: [:show, :purchase, :buycheck,:details, :edit, :update]
   def show
+    if @item.saler_id == current_user.id
+      redirect_to details_item_path(@item.id)
+    end
   end
 
   def buycheck
   end
 
   def details
+    if @item.saler_id != current_user.id
+      redirect_to item_path(@item.id)
+    end
   end
 
 
