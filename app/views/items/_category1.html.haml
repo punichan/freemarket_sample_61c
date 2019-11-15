@@ -8,6 +8,10 @@
               %span.item-image__price
                 = item.price
               = image_tag item.images.first.images_url,class:"item-image__picture"
+              -if item.buyer_id
+                .soldou
+                  .soldou-message
+                    SOLD
             %figcaption.item-style
               %span.item-style--font
                 = item.name
