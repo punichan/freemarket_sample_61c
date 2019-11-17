@@ -35,9 +35,9 @@
           %h3.info-title 
             配送先
         %address.info-text
-          = @user.town
+          = @user.postal_code
         %br
-          大阪府 吹田市西の庄町 4-3
+          = @user.prefecture.name
         %br
           = current_user.first_name
           = current_user.last_name
