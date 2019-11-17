@@ -22,11 +22,12 @@
         display: flex;
         &__image{
           display: block;
-          width: 64px;
+          max-width: 148px;
           max-height: 148px;
+          
         }
         &__title{
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 600;
           margin: 0 0 0 16px;
           line-height: 1.5;
@@ -96,10 +97,23 @@
             font-weight: bold;
           }
         }
-        .info-text{
-          margin: 8px 0 0;
+        .info-code{
+          margin: 8px 0 0 ;
           font-size: 14px;
         }
+        .info-text{
+          display: flex;
+          &__left{
+            font-size: 15px;
+            margin: 20px 0 8px ;
+          }
+          &__center{
+            margin: 20px 0 0;
+          }
+          &__right{
+            margin: 20px 0 0;
+          }
+        }      
         .info-edit{
           display: block;
           text-align: right;

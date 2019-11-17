@@ -5,6 +5,8 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
+    user = current_user.addresses
+    @user = user[0]
   end
 
   def details
