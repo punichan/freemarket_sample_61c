@@ -7,7 +7,7 @@
     %h2.box-header 購入内容の確認
     .box-detail 
       .item-detail
-        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195", class: "item-detail__image"
+        =image_tag @item.images.first.images_url , class:"item-detail__image"
         %p.item-detail__title
           = @item.name
       .item-pricebox
@@ -34,10 +34,17 @@
         .info-box
           %h3.info-title 
             配送先
-        %address.info-text
+        %address.info-code
+          〒
           = @user.postal_code
-        %br
-          = @user.prefecture.name
+        .info-text  
+          .info-text__left
+            = @user.prefecture.name
+          .info-text__center
+            = @user.city
+          .info-text__right
+            = @user.town
+          
         %br
           = current_user.first_name
           = current_user.last_name
