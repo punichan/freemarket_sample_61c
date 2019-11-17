@@ -37,7 +37,7 @@
             .form-group
               = a.label :prefecture, "都道府県", class: "label"
               %span.essential 必須
-              = a.text_field :prefecture, autofocus: true, autocomplete: "prefecture", class: "form-default"
+              = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "form-sell"
             .form-group
               = a.label :city, "市区町村", class: "label"
               %span.essential 必須
