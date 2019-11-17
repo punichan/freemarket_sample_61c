@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :sale_items, -> { where("buyer_id is NULL") }, foreign_key:"saler_id", class_name:"Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key:"saler_id", class_name: "Item"
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+
     validates :nickname, presence: true
     validates :email, presence: true, uniqueness: true
     validates :password, presence: true, length: { minimum: 7 } 
