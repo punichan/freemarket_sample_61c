@@ -10,11 +10,12 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
-    unless user_signed_in?
+    if user_signed_in?
+      user = current_user.addresses
+      @user = user[0]
+    else
       redirect_to new_user_session_path
     end
-    user = current_user.addresses
-    @user = user[0]
   end
 
   def details
