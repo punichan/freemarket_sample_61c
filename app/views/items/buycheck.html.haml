@@ -7,13 +7,15 @@
     %h2.box-header 購入内容の確認
     .box-detail 
       .item-detail
-        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?465897195", class: "item-detail__image"
-        %p.item-detail__title とらんぷトランプトランプトランプトランプトランプトランプ
+        =image_tag @item.images.first.images_url , class:"item-detail__image"
+        %p.item-detail__title
+          = @item.name
       .item-pricebox
         %span.item-pricebox__price 
-          ¥5,500
+          ¥
+          = @item.price.to_s(:delimited)
         %span.item-pricebox__text 
-          送料込み
+          = @item.delivery_burden.name2
 
       = form_with url: purchase_item_path, method: :post, class: 'purchase_way', local: true do |f|
         .purchase_way__point
@@ -23,7 +25,8 @@
           .purchase_way__price__text
             支払い金額
           .purchase_way__price__num
-            ¥5,500
+            ¥
+            = @item.price.to_s(:delimited)
         %script.payjp-button{"data-key" => "pk_test_b3ddac84b5cd2d867bf721f8", :src => "https://checkout.pay.jp", :type => "text/javascript"}
 
     .box-border
@@ -31,12 +34,20 @@
         .info-box
           %h3.info-title 
             配送先
-        %address.info-text
-          〒564-0071
+        %address.info-code
+          〒
+          = @user.postal_code
+        .info-text  
+          .info-text__left
+            = @user.prefecture.name
+          .info-text__center
+            = @user.city
+          .info-text__right
+            = @user.town
+          
         %br
-          大阪府 吹田市西の庄町 4-3
-        %br
-          市川 真巳
+          = current_user.first_name
+          = current_user.last_name
         =link_to "", class: "info-edit" do
           %span 変更する >
 
