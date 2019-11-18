@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def new
 
-    if user_signed_in?
+    # if user_signed_in?
       @item = Item.new
       10.times{@item.images.build}
       @parents = Category.where("ancestry is NULL")
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
       @prefecture = Prefecture.all
     else
       redirect_to new_user_registration_path
-    end
+    # end
 
   end
 
