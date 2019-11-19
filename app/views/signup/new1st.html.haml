@@ -28,7 +28,7 @@
       %h2.registration-head__title 会員情報入力
     .registration-form
       .form-wrapper
-        = form_with model: @user, url: new2nd_signup_index_path, method: :get, id:"new_user", class:"new_user", local: true do |form|
+        = form_with model: @user, url: new2nd_signup_index_path, method: :get, id:"new_user", class:"new_user", local: true do |form|  
           .form-group
             = form.label :image, "ニックネーム", class: "label"
             %span.essential 必須
@@ -80,7 +80,7 @@
             %p ※ 本人情報は正しく入力してください。会員登録後、
             %p 修正するにはお時間を頂く場合があります。
           .form-group
-            = recaptcha_tags
+            -# = recaptcha_tags
           .form-group
             %p「次へ進む」のボタンを押すことにより、利用規約に
             %p 同意したものとみなします

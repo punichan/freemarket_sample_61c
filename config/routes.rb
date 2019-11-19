@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     member do
-      get 'buycheck'
-      get 'details'
+      get  'buycheck'
+      get  'details'
       post 'purchase'
+    end
+    collection do
+      get   'search'
     end
   end
   resources :users do

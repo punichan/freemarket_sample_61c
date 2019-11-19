@@ -63,6 +63,22 @@
     font-size: 16px; 
     letter-spacing: 1px; 
   }
+  .item-search{
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 20px;
+    z-index: 1;
+    position:absolute; 
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+    widows: 100%;
+    &--font{
+      padding: 16px 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
   .form-delivery-sell{
     width: 111%; 
     height: 48px;

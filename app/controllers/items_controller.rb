@@ -23,17 +23,23 @@ class ItemsController < ApplicationController
     @nike_brand = Item.where(brand_id: 3803).limit(10)
   end
 
-  def new
+  def search
+    @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%")
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json 
+    end
+  end
 
+  def new
     if user_signed_in?
       @item = Item.new
       10.times{@item.images.build}
-      @parents = Category.where("ancestry is NULL")
-
-      @children =  @parents.map {|parent| parent.children}
-
-      @grandchildren = @children.map { |child| child[0].children }
-      @prefecture = Prefecture.all
+      #hamlに直接書かないとvalidatesがかからない。
+      # @parents = Category.where("ancestry is NULL")
+      # @children =  @parents.map {|parent| parent.children}
+      # @grandchildren = @children.map { |child| child[0].children }
     else
       redirect_to new_user_registration_path
     end
@@ -43,20 +49,19 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.saler_id = current_user.id
-    if @item.save!
+    if @item.save
       redirect_to action: 'index'
     else
-      redirect_to action: 'new'
+      render action: 'new'
     end
   end
 
+
   def edit
-    10.times{@item.images.build}
+    @item.images.build
     @parents = Category.where("ancestry is NULL")
     @children =  @parents.map {|parent| parent.children}
-
     @grandchildren = @children.map { |child| child[0].children }
-    @prefecture = Prefecture.all
   end
 
   def update
