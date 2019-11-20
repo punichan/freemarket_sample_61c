@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def new
 
-    # if user_signed_in?
+    if user_signed_in?
       @item = Item.new
       10.times{@item.images.build}
       @parents = Category.where("ancestry is NULL")
@@ -38,14 +38,14 @@ class ItemsController < ApplicationController
       @prefecture = Prefecture.all
     else
       redirect_to new_user_registration_path
-    # end
+    end
 
   end
 
   def create
     @item = Item.new(item_params)
     @item.saler_id = current_user.id
-    if @item.save!
+    if @item.save
       redirect_to action: 'index'
     else
       redirect_to action: 'new'
@@ -114,6 +114,7 @@ class ItemsController < ApplicationController
       :buyer_id,
       images_attributes: [:images])
   end
+  
   def update_item_params
     params.require(:item).permit(
       :name,
