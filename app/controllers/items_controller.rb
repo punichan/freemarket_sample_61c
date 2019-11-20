@@ -131,6 +131,7 @@ class ItemsController < ApplicationController
       :buyer_id,
       images_attributes: [:images])
   end
+  
   def update_item_params
     params.require(:item).permit(
       :name,
