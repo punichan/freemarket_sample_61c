@@ -1,15 +1,28 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
   before_action :set_item, only: [:show, :purchase, :buycheck,:details, :edit, :update]
+  
   def show
+    if user_signed_in?
+      if @item.saler_id == current_user.id
+        redirect_to details_item_path(@item.id)
+      end
+    end
   end
 
   def buycheck
-    user = current_user.addresses
-    @user = user[0]
+    if user_signed_in?
+      user = current_user.addresses
+      @user = user[0]
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def details
+    if @item.saler_id != current_user.id
+      redirect_to item_path(@item.id)
+    end
   end
 
 
@@ -25,17 +38,22 @@ class ItemsController < ApplicationController
     @nike_brand = Item.where(brand_id: 3803).limit(10)
   end
 
-  def new
+  def search
+    @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json 
+    end
+  end
 
+  def new
     if user_signed_in?
       @item = Item.new
       10.times{@item.images.build}
-      @parents = Category.where("ancestry is NULL")
-
-      @children =  @parents.map {|parent| parent.children}
-
-      @grandchildren = @children.map { |child| child[0].children }
-      @prefecture = Prefecture.all
+      #hamlに直接書かないとvalidatesがかからない。
+      # @parents = Category.where("ancestry is NULL")
+      # @children =  @parents.map {|parent| parent.children}
+      # @grandchildren = @children.map { |child| child[0].children }
     else
       redirect_to new_user_registration_path
     end
@@ -48,17 +66,16 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to action: 'index'
     else
-      redirect_to action: 'new'
+      render action: 'new'
     end
   end
 
+
   def edit
-    10.times{@item.images.build}
+    @item.images.build
     @parents = Category.where("ancestry is NULL")
     @children =  @parents.map {|parent| parent.children}
-
     @grandchildren = @children.map { |child| child[0].children }
-    @prefecture = Prefecture.all
   end
 
   def update

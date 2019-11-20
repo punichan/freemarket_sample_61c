@@ -1,9 +1,11 @@
 FactoryBot.define do
+  
   factory :item do
-    name                 {"item"}
-    item_description     {"texttexttexttexttext"}
+    name                 {Faker::Name.name}
+    item_description     {Faker::Lorem.sentence}
     price                {"1000"}
     brand_id             {"1"}
+    saler_id             {"1"}
     category_id          {"1"}
     shoes_size_id        {"1"}
     condition_id         {"1"}
@@ -13,6 +15,5 @@ FactoryBot.define do
     shipment_days_id     {"1"}
     buyer_id             {"2"}
     clothes_size_id      {"1"}
-    saler_id             {"1"}
   end
 end
