@@ -27,11 +27,16 @@ crumb :logout do
 end
 
 crumb :exhibition do
-  link "出品中", exhibition_user_path
+  link "出品した商品 - 出品中", exhibition_user_path
   parent :users
 end
 
 crumb :selled do
   link "売却済み", selled_user_path
   parent :users
+end
+
+crumb :details do
+  link "出品商品画面", details_item_path
+  parent :exhibition 
 end
