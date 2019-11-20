@@ -43,7 +43,8 @@
                 = form.collection_select :clothes_size_id, ClothesSize.all, :id, :name, class: "form-sell"
               .myform-group
                 %h4.upload-box__title ブランド
-                = form.text_field :brand_id, class: "form-sell"
+                = form.text_field :brand_id, disabled: false, class: "form-sell"
+                = form.text_field :brand_id , class: "hidden", id: "a"
                 %ul.item-search  
               .space
               .form-group

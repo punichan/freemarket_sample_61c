@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
 
   def search
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%")
-    # binding.pry
     respond_to do |format|
       format.html
       format.json 
