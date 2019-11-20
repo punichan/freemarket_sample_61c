@@ -9,7 +9,7 @@
           = f.text_field :search, placeholder: '何かお探しですか？', class:'search-box'
           %button{type: "submit"}
             =fa_icon "search", class:'fa-search'
-     
+    
     .header__contents
       .header__contents__left
         .header__contents__left__caegory
@@ -39,11 +39,17 @@
               =link_to "#", class:"todo-btn" do
                 %i.fa.fa-check.fa-lg.icon-heart
                 やることリスト
+                .header__contents__right__todo__box__k
+                  %i.k-img
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png", width:"55",height:"55"
+                  %i.k-text
+                    ご登録のメールアドレスに認証メールを送りました。
           .header__contents__right__ava
             .header__contents__right__ava__box
               =link_to user_path(current_user.id), class:"ava-btn" do
                 = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32",height:"32"
                 マイページ
+                
       -else
         .header__contents__right
           .header__contents__right__signup
