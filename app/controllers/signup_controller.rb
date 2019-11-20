@@ -24,15 +24,12 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     @user.addresses.build
   end
-  
+
   def new4th
   end
   
   def new5th
   end
-  
-  
-  
   
   def create
     if session[:provider].present? && session[:uid].present?
@@ -106,7 +103,7 @@ class SignupController < ApplicationController
       :birth_year_on,
       :birth_month_on,
       :birth_day_on,
-      addresses_attributes: [:postal_code, :prefecture, :city, :town, :building]
+      addresses_attributes: [:postal_code, :prefecture_id, :city, :town, :building]
     )
   end
 end

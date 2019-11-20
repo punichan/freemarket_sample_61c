@@ -87,6 +87,22 @@
                 z-index: 1;
                 height: 100%;
               }
+              .soldou{
+                z-index: 100;
+                position: absolute;
+                top: 0;
+                height: 80px;
+                width: 80px;
+                background-color: red;
+                font-size: 16px;
+                background: linear-gradient(to top left, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%;
+                .soldou-message{
+                  font-weight: bold;
+                  color: white;
+                  transform: rotate(315deg);
+                  margin: 0 -20px 10px 0;
+                }
+              }
             }
 
             .item-style{
@@ -105,7 +121,6 @@
                 overflow: hidden;
                 position: relative;
                 word-break: break-word;
-                
               }
             }
           }  
