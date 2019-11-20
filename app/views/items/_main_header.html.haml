@@ -34,21 +34,23 @@
               =link_to "#", class:"notice-btn" do
                 %i.fa.fa-bell.fa-lg.icon-heart
                 お知らせ
+                -# .header__contents__right__notice__box__news
+                -#   %i.news-img
+                -#     = image_tag "https://static.mercdn.net/images/mercari_profile.png", width:"55",height:"55"
+                -#     %i.news-text
+                -#       事務局から個別メッセージ 
           .header__contents__right__todo
             .header__contents__right__todo__box
               =link_to "#", class:"todo-btn" do
                 %i.fa.fa-check.fa-lg.icon-heart
                 やることリスト
-                -# .header__contents__right__todo__box__k
-                -#   %i.k-img
-                -#     = image_tag "https://static.mercdn.net/images/mercari_profile.png", width:"55",height:"55"
-                -#   %i.k-text
-                -#     ご登録のメールアドレスに認証メールを送りました。
           .header__contents__right__ava
             .header__contents__right__ava__box
               =link_to user_path(current_user.id), class:"ava-btn" do
                 = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32",height:"32"
                 マイページ
+                .header__contents__right__ava__box__mypage
+                %ul.
                 
       -else
         .header__contents__right
