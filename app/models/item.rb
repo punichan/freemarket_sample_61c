@@ -25,5 +25,5 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :shipment_days_id, presence: true
   validates :price, presence: true, numericality: {only_integer: true}
-
+  validates :images, presence: true
 end

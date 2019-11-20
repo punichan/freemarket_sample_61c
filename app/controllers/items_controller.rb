@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to action: 'index'
     else
-      render action: 'new'
+      redirect_to action: 'new'
     end
   end
 
