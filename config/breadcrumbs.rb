@@ -37,6 +37,6 @@ crumb :selled do
 end
 
 crumb :details do
-  link "出品商品画面", 
-  parent :
+  link "出品商品画面", details_item_path
+  parent :exhibition 
 end
