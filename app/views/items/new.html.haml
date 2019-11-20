@@ -34,9 +34,9 @@
               .form-group
                 %h4.upload-box__title カテゴリー
                 %span.essential 必須
-                = form.collection_select :category_id, Category.where("ancestry is NULL"), :id, :name, class: "form-sell", include_blank: "---"
-                = form.collection_select :category_id, Category.where("ancestry is NULL").map {|parent| parent.children}[0], :id, :name, class: "form-sell", include_blank: "---"
-                = form.collection_select :category_id, Category.where("ancestry is NULL").map {|parent| parent.children}.map { |child| child[0].children }[0], :id, :name, class: "form-sell", include_blank: "---"
+                = form.collection_select :category_id, @parents, :id, :name, class: "form-sell", include_blank: "---"
+                = form.collection_select :category_id, @children, :id, :name, class: "form-sell", include_blank: "---"
+                = form.collection_select :category_id, @grandchildren, :id, :name, class: "form-sell", include_blank: "---"
               .myform-group
                 %h4.upload-box__title サイズ
                 %span.essential 必須
