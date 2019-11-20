@@ -51,9 +51,9 @@ class ItemsController < ApplicationController
       @item = Item.new
       10.times{@item.images.build}
       #hamlに直接書かないとvalidatesがかからない。
-      # @parents = Category.where("ancestry is NULL")
-      # @children =  @parents.map {|parent| parent.children}
-      # @grandchildren = @children.map { |child| child[0].children }
+      @parents = Category.where("ancestry is NULL")
+      @children =  @parents.map {|parent| parent.children}
+      @grandchildren = @children.map { |child| child[0].children }
     else
       redirect_to new_user_registration_path
     end
