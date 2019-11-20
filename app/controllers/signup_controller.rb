@@ -24,15 +24,12 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     @user.addresses.build
   end
-  
+
   def new4th
   end
   
   def new5th
   end
-  
-  
-  
   
   def create
     if session[:provider].present? && session[:uid].present?

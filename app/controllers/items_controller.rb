@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # before action :move_to_signup, expcept: :index #仮はずし
   before_action :set_item, only: [:show, :purchase, :buycheck,:details, :edit, :update]
+  
   def show
     if user_signed_in?
       if @item.saler_id == current_user.id
@@ -57,6 +58,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.saler_id = current_user.id
+
     if @item.save!
       redirect_to action: 'index'
     else
