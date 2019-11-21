@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
   def new
     if user_signed_in?
       @item = Item.new
-      10.times{@item.images.build}
+      @item.images.build
       #hamlに直接書かないとvalidatesがかからない。
       @parents = Category.where("ancestry is NULL")
       @children =  @parents.map {|parent| parent.children}
