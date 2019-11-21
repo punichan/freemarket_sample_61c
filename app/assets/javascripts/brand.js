@@ -21,7 +21,6 @@ $(function(){
         if (brands.length !== 0) {
           brands.forEach(function(brand){
           appendbrand(brand);
-          console.log("o")
           });
         }
       })
@@ -39,6 +38,5 @@ $(function(){
     $('#item_brand_id').val(text);
     $('#a').val(id);
     $('.item-search').empty();
-    console.log(id);
   })
 })
