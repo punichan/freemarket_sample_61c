@@ -5,16 +5,15 @@ $(function(){
   }
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
-                        <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
+    childSelectHtml = `<div class='childcat' id= 'children_cat'>
+                        <div class='childcat-box'>
+                          <select class="childcat-select" id="child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
-                          <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                         </div>
                       </div>`;
-    $('.listing-product-detail__category').append(childSelectHtml);
+    $('.form-group-cat').append(childSelectHtml);
   }
   $('#item_category_id').on('change', function(){
     console.log("change");
@@ -25,7 +24,7 @@ $(function(){
       $.ajax({
         url: 'get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory},
+        data: { parent_id: parentCategory},
         dataType: 'json'
       })
       .done(function(children){

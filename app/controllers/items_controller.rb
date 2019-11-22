@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
