@@ -1,6 +1,6 @@
 $(function(){
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   function appendChildrenBox(insertHTML){
@@ -18,13 +18,13 @@ $(function(){
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='childcat' id= 'grandchildren_cat'>
-                        <div class='childcat-box'>
-                          <select class="childcat-select" id="grandchild_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
-                            ${insertHTML}
-                          <select>
-                        </div>
-                      </div>`;
+                              <div class='childcat-box'>
+                                <select class="grandchildcat-select" id="grandchild_category" name="item[category_id]">
+                                 <option value="---" data-category="---">---</option>
+                                 ${insertHTML}
+                                <select>
+                              </div>
+                            </div>`;
     $('.form-group-cat').append(grandchildSelectHtml);
   }
   $('#item_category_id').on('change', function(){
