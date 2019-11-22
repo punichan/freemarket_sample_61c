@@ -6,7 +6,7 @@
           %figure.item-title
             .item-image
               %span.item-image__price
-                = item.price
+                = item.price.to_s(:delimited)
               = image_tag item.images.first.images_url,class:"item-image__picture"
               -if item.buyer_id
                 .soldou
