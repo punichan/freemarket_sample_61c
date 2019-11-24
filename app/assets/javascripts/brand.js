@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   var search_list = $('.item-search');
   function appendbrand(brand){
     var html = `<li class="item-search--font" data-brand-id="${brand.id}">${brand.name}</li>`;
