@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   $('.form-price').on('input',function(){
   var data = $('.form-price').val();
   console.log(data);
