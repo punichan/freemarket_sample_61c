@@ -7,9 +7,9 @@ $(document).on('turbolinks:load',function(){
   
   $("#item_brand_id").on("keyup",function(){
     var input = $("#item_brand_id").val();
+    console.log(input)
     // 文字がある時
     if(input !== ""){
-      $('.item-search').empty();
       $.ajax({
         type: 'get',
         url:  '/items/search',
