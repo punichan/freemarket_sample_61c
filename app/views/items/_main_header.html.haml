@@ -49,18 +49,19 @@
               =link_to user_path(current_user.id), class:"ava-btn" do
                 = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32",height:"32"
                 マイページ
-                .header__contents__right__ava__box__mypage
-                  .header__contents__right__ava__box__mypage__top
-                    =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png",width:"60",height:"60"
-                  %ul.list-mypage-tab
-                    %li.list-tab-p1 売上金
-                    %li.list-tab-p2 ポイント
-                    %li.list-tab いいね！一覧
-                    %li.list-tab 出品した商品-出品中       
-                    %li.list-tab 出品した商品-取引中
-                    %li.list-tab 出品した商品-売却済み
-                    %li.list-tab 購入した商品-取引中
-                    %li.list-tab 購入した商品-過去の取引
+                -# .header__contents__right__ava__box__mypage
+                -#   .header__contents__right__ava__box__mypage__top
+                -#     =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png",width:"60",height:"60",class:"mypage-img" 
+                -#   %ul.list-mypage-tab
+                -#     評価：０　　出品数：２
+                -#     %li.list-tab-p1 売上金
+                -#     %li.list-tab-p2 ポイント
+                -#     %li.list-tab いいね！一覧
+                -#     %li.list-tab 出品した商品-出品中       
+                -#     %li.list-tab 出品した商品-取引中
+                -#     %li.list-tab 出品した商品-売却済み
+                -#     %li.list-tab 購入した商品-取引中
+                -#     %li.list-tab 購入した商品-過去の取引
                 
       -else
         .header__contents__right
